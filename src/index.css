@@ -1,3 +1,11 @@
+* {
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +19,131 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.fp-section {
+  height: 100vh !important;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+/* GENERAL STYLES */
+
+.justify {
+  display: flex; 
+  justify-content: center;
+}
+
+.page-butn-row {
+  display: flex;
+  justify-content: center;
+}
+
+  .go-to-butn {
+    width: fit-content !important;
+    color: white !important;
+    border: 2px solid white !important;
+  }
+
+  .go-to-butn:hover {
+    color: black !important;
+    background-color: white;
+  }
+
+/* DESKTOP HOMEPAGE */
+
+.desktop-home-container {
+
+}
+
+/* DESKTOP ABOUT ME */
+
+  .about-me-text {
+    width: 70%;
+  }
+
+/* DESKTOP SKILLS */
+
+.desktop-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 70%;
+}
+
+  .skill {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+
+    .skill i {
+      font-size: 3rem;
+    }
+
+    .skill img {
+      height: 50px;
+    }
+
+/* DESKTOP PROJECTS */
+
+.desktop-projects-container {
+  display: grid;
+}
+
+  .desktop-proj-tab-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-bottom: 30px;
+    width: 83%;
+    justify-self: center;
+  }
+
+    .tab,
+    .active-tab {
+      border-bottom: 1px solid white;
+      font-size: 1rem;
+      padding: 10px;
+    }
+
+    .active-tab {
+      border-bottom: 0;
+      border-top: 1px solid white;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+    }
+
+    .tab:hover {
+      border: 1px solid white;
+    
+    }
+
+    .ipad-img {
+      width: 60%;
+      height: auto;
+
+    }
+
+    .iphone-img {
+      width: 23%;
+      height: auto;
+    }
+
+  .desktop-proj-butn-row {
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    padding-top: 20px;
+  }
+
+    .demo-butn,
+    .code-butn {
+      color: white;
+      outline: 2px solid white;
+      width: fit-content;
+    }
+
+    .demo-butn:hover,
+    .code-butn:hover {
+      background-color: white;
+      color: black;
+    }
