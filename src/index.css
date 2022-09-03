@@ -3,22 +3,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 .fp-section {
   height: 100vh !important;
@@ -31,6 +21,11 @@ code {
 .justify {
   display: flex; 
   justify-content: center;
+}
+
+.align {
+  display: flex;
+  align-items: center;
 }
 
 .page-butn-row {
@@ -51,38 +46,62 @@ code {
 
 /* DESKTOP HOMEPAGE */
 
-.desktop-home-container {
+.desktop-home-container h1 {
+  font-size: 3.5vw;
+}
 
+.desktop-home-container h2 {
+  font-size: 2.5vw;
+  padding-bottom: 10vh;
 }
 
 /* DESKTOP ABOUT ME */
-
+.about-me-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5vh;
+}
   .about-me-text {
     width: 70%;
+    padding-top: 2vh;
   }
 
 /* DESKTOP SKILLS */
-
-.desktop-skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  width: 70%;
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding-top: 5vh;
 }
 
-  .skill {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
+  .skills-header-container {
+    display: flex;
+    flex-direction: column;
   }
-
-    .skill i {
-      font-size: 3rem;
+    .desktop-skills-grid {
+      padding-top: 5vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      width: 70%;
     }
 
-    .skill img {
-      height: 50px;
-    }
+      .skill {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+      }
+
+        .skill i {
+          font-size: 3rem;
+        }
+
+        .skill img {
+          height: 50px;
+        }
 
 /* DESKTOP PROJECTS */
 
@@ -147,3 +166,5 @@ code {
       background-color: white;
       color: black;
     }
+
+    

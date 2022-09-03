@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import background from './img/test-background.jpg'
 import ReactFullpage from '@fullpage/react-fullpage';
-import Homepage from './Homepage';
-import About from './About';
-import Skills from './Skills';
-import Projects from './Projects';
+import Homepage from './desktop-components/Homepage';
+import About from './desktop-components/About';
+import Skills from './desktop-components/Skills';
+import Projects from './desktop-components/Projects';
+import MobileNav from './mobile-components/MobileNav';
+import HomepageMobile from './mobile-components/HomepageMobile';
+import AboutMobile from './mobile-components/About-Mobile';
+import SkillsMobile from './mobile-components/Skills-Mobile';
+import ProjectsMobile from './mobile-components/Projects-Mobile';
+import MobileProjects from './mobile-components/Mobile-Projects';
 import './index.css';
+import './mobile.css'
 import './multiple-circles.css';
 
 
@@ -28,6 +35,8 @@ const FullpageWrapper = () => (
     anchors={anchors}
     navigation
     navigationTooltips={anchors}
+    autoScrolling
+    responsiveWidth={768}
     showActiveTooltip
     licenseKey={'KRA6H-Q2PJJ-6S9J9-ICUYH-NUBKL'}
     scrollingSpeed={1500}
@@ -40,18 +49,18 @@ const FullpageWrapper = () => (
 
       return (
         <div>
-          <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed' }}>
-            <Homepage />
-          </div>
-          <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed' }}>
-            <About />
-          </div>
-          <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed' }}>
-            <Skills />
-          </div>
-          <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed' }}>
-            <Projects />
-          </div>
+            <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed', backgroundPosition:'center' }}>
+              <Homepage />
+            </div>
+            <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed', backgroundPosition:'center' }}>
+              <About />
+            </div>
+            <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed', backgroundPosition:'center' }}>
+              <Skills />
+            </div>
+            <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed', backgroundPosition:'center' }}>
+              <Projects />
+            </div>
         </div>
       );
     }}
@@ -61,7 +70,16 @@ const FullpageWrapper = () => (
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FullpageWrapper />
+    <div className='d-none d-md-block'>
+      <FullpageWrapper />
+    </div>
+    <div className='d-md-none mobile-display'>
+      <MobileNav />
+      <HomepageMobile />
+      <AboutMobile />
+      <SkillsMobile />
+      <MobileProjects />
+    </div>
   </React.StrictMode>
 );
 
