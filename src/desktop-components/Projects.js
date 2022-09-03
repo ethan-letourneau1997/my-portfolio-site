@@ -1,4 +1,9 @@
 import { useState } from 'react'
+import { Button } from 'react-bootstrap'
+import { OverlayTrigger } from 'react-bootstrap'
+import { Overlay } from 'react-bootstrap'
+import { Tooltip } from 'react-bootstrap'
+import { useRef } from 'react'
 import ipadInventoryManagement from '../project-img/desktop-inventory-management.png'
 import iphoneInventoryManagement from '../project-img/iphone-inventory-management.png'
 import ipadResumeBuilder from '../project-img/desktop-resume.png'
@@ -32,11 +37,18 @@ export default function Projects () {
         setActiveTab('tab4')
         console.log(activeTab)
     }
+
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          Coming Soon
+        </Tooltip>
+    );
+
     
 
     return (
     <div>
- 
+
         {activeTab === 'tab1' ? 
             <div className="container desktop-projects-container">
                 <div className="row desktop-proj-tab-row">
@@ -69,10 +81,16 @@ export default function Projects () {
                     <img className="iphone-img" id="iphone-img" src={iphoneResumeBuilder} alt=""></img>
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
+                <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}>
+                        <Button variant="outline-light" size='lg' className='demo-butn'>Demo</Button>
+                </OverlayTrigger>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
             </div>
+                  
         : <div></div>}
 
         {activeTab === 'tab3' ? 
@@ -88,7 +106,12 @@ export default function Projects () {
                     <img className="iphone-img" id="iphone-img" src={iphoneCalculator} alt=""></img>
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
+                    <OverlayTrigger
+                        placement="right"
+                        delay={{ show: 250, hide: 400 }}
+                        overlay={renderTooltip}>
+                            <Button variant="outline-light" size='lg' className='demo-butn'>Demo</Button>
+                    </OverlayTrigger>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
             </div>
@@ -107,7 +130,12 @@ export default function Projects () {
                     <img className="iphone-img" id="iphone-img" src={iphoneInventoryManagement} alt=""></img>
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
+                    <OverlayTrigger
+                        placement="right"
+                        delay={{ show: 250, hide: 400 }}
+                        overlay={renderTooltip}>
+                            <Button variant="outline-light" size='lg' className='demo-butn'>Demo</Button>
+                    </OverlayTrigger>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
             </div>
