@@ -17,9 +17,6 @@ export default function About () {
                         Magnam neisi dolores quo, ipsa quisquam tempora corrupti natus, ex in quam possimus.
                     </p>
                 </Row>
-            <Row className="row page-butn-row">
-                    <Button href="#Skills" variant="outline-ligh" size="lg" className="go-to-butn">What can I do?</Button>
-            </Row> 
         </Container>
     )
 }

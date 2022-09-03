@@ -47,9 +47,6 @@ export default function SkillsMobile() {
                     </div>
                     </div>
             </Row>
-            <Row className="page-butn-row">
-                <Button className="go-to-butn-mob" href="#projects-mob" variant="outline-light" size="lg">What have I made?</Button>
-            </Row>
         </Container>
     ) 
 }

@@ -17,9 +17,6 @@ export default function AboutMobile() {
                     Magnam neisi dolores quo, ipsa quisquam tempora corrupti natus, ex in quam possimus.
                 </p>
             </Row>
-            <Row className="mob-page-butn-row">
-                <Button className="go-to-butn-mob" href="#skills-mob" variant="outline-light" size="lg">What can I do?</Button>
-            </Row>
         </Container>
     ) 
 }

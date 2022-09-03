@@ -23,7 +23,7 @@
     font-size: 3.3vw !important;
 }
 
-.about-me-mobile-container,
+/* .about-me-mobile-container,
 .homepage-mobile,
 .skills-mobile,
 .mobile-projects,
@@ -33,6 +33,20 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+} */
+.about-me-mobile-container,
+.homepage-mobile,
+.skills-mobile,
+.mobile-projects,
+.carousel,
+.mob-projects {
+    background-color: rgb(23, 23, 23);
+}
+
+.homepage-mobile {
+    background: url(./img/test-background.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 
@@ -112,7 +126,7 @@ hr {
 /* Mobile Skills */
 
 .skills-mobile {
-    height: 100vh;
+    /* height: 100vh; */
     padding-top: 15vh;
     padding-bottom: 5vh;
     display: flex;
