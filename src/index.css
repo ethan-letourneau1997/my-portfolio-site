@@ -66,6 +66,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding-top: 5vh;
+  padding-bottom: 5vh;
 }
   .about-me-text {
     width: 70%;
@@ -79,6 +80,8 @@
   justify-content: space-between;
   height: 100vh;
   padding-top: 5vh;
+  padding-bottom: 5vh;
+  
 }
 
   .skills-header-container {
