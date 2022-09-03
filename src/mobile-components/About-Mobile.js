@@ -6,15 +6,7 @@ export default function AboutMobile() {
         <Container id="about-mob" fluid className="about-me-mobile-container">
             <Row className="justify align">
                 <h2 className="justify">About Me</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Labore nemo debitis aut facere repellendus magnam cupiditate voluptas. 
-                    Magnam nisi dolores quo, ipsa quisquam tempora corrupti natus, ex in quam possimus.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Labore nemo debitis aut facere repellendus magnam cupiditate voluptas. 
-                    Magnam nisi dolores quo, ipsa quisquam tempora corrupti natus, ex in quam possimus.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Labore nemo debitis aut facere repellendus magnam cupiditate voluptas. 
-                    Magnam neisi dolores quo, ipsa quisquam tempora corrupti natus, ex in quam possimus.
+                <p>I am a self taught web developer with a Master's Degree in Information Technology.
                 </p>
             </Row>
         </Container>

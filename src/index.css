@@ -16,6 +16,10 @@
   padding-bottom: 5%;
 }
 
+.fp-tooltip {
+  top: 0 !important;
+}
+
 /* GENERAL STYLES */
 
 .justify {
@@ -97,10 +101,12 @@
 
         .skill i {
           font-size: 3rem;
+          justify-self: center;
         }
 
         .skill img {
           height: 50px;
+          justify-self: center;
         }
 
 /* DESKTOP PROJECTS */
