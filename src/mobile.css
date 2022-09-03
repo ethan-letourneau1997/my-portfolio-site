@@ -127,7 +127,7 @@ hr {
 
 .skills-mobile {
     /* height: 100vh; */
-    padding-top: 15vh;
+    /* padding-top: 15vh; */
     padding-bottom: 5vh;
     display: flex;
     flex-direction: column;
