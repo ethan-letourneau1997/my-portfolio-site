@@ -73,7 +73,7 @@ const [radioValue, setRadioValue] = useState('1');
             </Row>
             
 
-            <Offcanvas placement="bottom" show={show} onHide={handleClose}>
+            <Offcanvas className="offcanvas-mobile" placement="bottom" show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton closeVariant="white">
                 <Offcanvas.Title>Display Options</Offcanvas.Title>
                 </Offcanvas.Header>

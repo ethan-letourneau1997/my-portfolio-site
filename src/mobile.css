@@ -181,7 +181,9 @@ hr {
 
         .offcanvas {
             background-color: rgb(37, 37, 37);
-        
+        }
+
+        .offcanvas-mobile {
             max-height: 40vh !important;
             height: fit-content !important;
             width: fit-content !important;

@@ -114,8 +114,38 @@
 /* DESKTOP PROJECTS */
 
 .desktop-projects-container {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+
 }
+
+  .radio-desktop {
+
+  }
+
+  .offcanvas-desktop {
+    
+  }
+
+  .proj-info-cont {
+    gap: 1vw;
+    padding-top: 3vh;
+    padding-bottom: 2vh;
+  }
+
+    .fa-circle-info {
+      color: white;
+      font-size: 1.5vw;
+  
+    }
+
+    .offcanvas-desktop-butn {
+      width: fit-content;
+      padding: 0;
+      border: 0;
+      background-color: transparent !important;
+    }
+
 
   .desktop-proj-tab-row {
     display: grid;
@@ -144,6 +174,14 @@
     
     }
 
+  
+    .desktop-proj-img-row {
+      display: flex;
+      justify-content: center;
+      gap: 10%;
+      max-height: 70vh;
+    }
+
     .ipad-img {
       width: 60%;
       height: auto;
@@ -159,7 +197,9 @@
     display: flex;
     justify-content: center;
     gap: 20%;
-    padding-top: 20px;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+
   }
 
     .demo-butn,

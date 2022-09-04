@@ -1,19 +1,22 @@
+import { Container, Row, Button, Carousel, Col, Offcanvas, CloseButton } from "react-bootstrap";
 import { useState } from 'react'
-import { Button } from 'react-bootstrap'
 import { OverlayTrigger } from 'react-bootstrap'
 import { Overlay } from 'react-bootstrap'
 import { Tooltip } from 'react-bootstrap'
 import { useRef } from 'react'
-import { AdvancedImage } from '@cloudinary/react'
+import { ButtonGroup } from 'react-bootstrap'
+import { ToggleButton } from 'react-bootstrap'
 import { Cloudinary } from '@cloudinary/url-gen'
-import { fill } from '@cloudinary/url-gen/actions/resize'
-import { responsive } from '@cloudinary/react'
+import { fill, limitFit } from '@cloudinary/url-gen/actions/resize'
+import { responsive, placeholder, AdvancedImage } from '@cloudinary/react'
 import ipadInventoryManagement from '../project-img/desktop-inventory-management.png'
 import iphoneInventoryManagement from '../project-img/iphone-inventory-management.png'
 import ipadResumeBuilder from '../project-img/desktop-resume.png'
 import iphoneResumeBuilder from '../project-img/iphone-resume.png'
 import ipadCalculator from '../project-img/desktop-calc.png'
 import iphoneCalculator from '../project-img/calc-mobile.png'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -48,6 +51,16 @@ export default function Projects () {
         </Tooltip>
     );
 
+    const [checked, setChecked] = useState(false);
+    const [radioValue, setRadioValue] = useState('1');
+
+    const radios = [
+        { name: 'Inventory Management', value: '1' },
+        { name: 'Resume Builder', value: '2' },
+        { name: 'Calculator App', value: '3' },
+        { name: 'Weather Forecast', value: '4' }
+    ];
+
     const cld = new Cloudinary({
         cloud: {
           cloudName: 'eletourneau'
@@ -60,102 +73,167 @@ export default function Projects () {
     const calculatorMobile = cld.image('calc-mobile_y1rtmd');
     const calculatorDesktop = cld.image('desktop-calc_p69q6e');
 
+    inventoryManagementMobile
+        .format('auto')
+        .quality('auto')
+        // .resize(limitFit().width(500).height(500));
+    inventoryManagementDesktop
+        .format('auto')
+        .quality('auto')
+        // .resize(limitFit().width(500).height(500));
+    resumeMobile
+        .format('auto')
+        .quality('auto')
+    resumeDesktop
+        .format('auto')
+        .quality('auto')
+    calculatorMobile
+        .format('auto')
+        .quality('auto')
+    calculatorDesktop
+        .format('auto')
+        .quality('auto')
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
-    <div>
+    <Container className="desktop-projects-container">
 
-        {activeTab === 'tab1' ? 
-            <div className="container desktop-projects-container">
+        <ButtonGroup>
+            {radios.map((radio, idx) => (
+            <ToggleButton
+                key={idx}
+                id={`radio-${idx}`}
+                type="radio"
+                variant="outline-light"
+                name="radio"
+                className="radio-desktop"
+                value={radio.value}
+                checked={radioValue === radio.value}
+                onChange={(e) => setRadioValue(e.currentTarget.value)}>
+                {radio.name}
+            </ToggleButton>
+            ))}
+        </ButtonGroup>
 
-                <div className="row desktop-proj-tab-row">
-                    <div className="active-tab justify" id="tab1" onClick={switchTab1}>Inventory Management</div>
-                    <div className="tab justify" id="tab2" onClick={switchTab2}>Resume Builder</div>
-                    <div className="tab justify" id="tab3" onClick={switchTab3}>Calculator</div>
-                    <div className="tab justify" id="tab4" onClick={switchTab4}>Weather Forecast</div>
-                </div>
-                <div className="row desktop-proj-img-row justify">
-                    <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200})]} />
-                    <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200})]} />             
+        {radioValue === '1' ? 
+        
+        <Row >
+            <div className="proj-info-cont justify align">
+                <h3>Inventory Management Site</h3>
+                <Button className="offcanvas-desktop-butn" variant="outline-light" onClick={handleShow}>
+                    <i class="fa-solid fa-circle-info"></i>
+                </Button>
+            </div>
+            <Offcanvas className="offcanvas-desktop" show={show} onHide={handleClose}>
+                <Offcanvas.Header closeButton>
+                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    Some text as placeholder. In real life you can have the elements you
+                    have chosen. Like, text, images, lists, etc.
+                </Offcanvas.Body>
+            </Offcanvas>
+            <div className="desktop-projects-container">
+                <div className="desktop-proj-img-row">
+                    <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                    <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />             
                 </div>
                 <div className='row desktop-proj-butn-row'>
                     <a className='btn btn-lg outline-light demo-butn'>Demo</a>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
             </div>
-        : <div></div>}
+               
+        </Row>
+        : null }
 
-        {activeTab === 'tab2' ? 
-            <div className="container desktop-projects-container">
-                <div className="row desktop-proj-tab-row">
-                    <div className="tab justify" id="tab1" onClick={switchTab1}>Inventory Management</div>
-                    <div className="active-tab justify" id="tab2" onClick={switchTab2}>Resume Builder</div>
-                    <div className="tab justify" id="tab3" onClick={switchTab3}>Calculator</div>
-                    <div className="tab justify" id="tab4" onClick={switchTab4}>Weather Forecast</div>
+        {radioValue === '2' ? 
+            <Row >
+                <div className="proj-info-cont justify align">
+                    <h3>Resume Builder</h3>
+                    <Button className="offcanvas-desktop-butn" variant="outline-light" onClick={handleShow}>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </Button>
                 </div>
-                <div className="row desktop-proj-img-row justify">
-                    <AdvancedImage cldImg={resumeDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200})]} />
-                    <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200})]} />
+                <Offcanvas className="offcanvas-desktop" show={show} onHide={handleClose}>
+                    <Offcanvas.Header closeButton>
+                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        Some text as placeholder. In real life you can have the elements you
+                        have chosen. Like, text, images, lists, etc.
+                    </Offcanvas.Body>
+                </Offcanvas>
+                <div className="desktop-proj-img-row">
+                    <AdvancedImage cldImg={resumeDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                    <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />          
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}>
-                        <Button variant="outline-light" size='lg' className='demo-butn'>Demo</Button>
-                </OverlayTrigger>
+                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
-            </div>
-                  
-        : <div></div>}
+            </Row>
+        : null}
 
-        {activeTab === 'tab3' ? 
-            <div className="container desktop-projects-container">
-                <div className="row desktop-proj-tab-row">
-                    <div className="tab justify" id="tab1" onClick={switchTab1}>Inventory Management</div>
-                    <div className="tab justify" id="tab2" onClick={switchTab2}>Resume Builder</div>
-                    <div className="active-tab justify" id="tab3" onClick={switchTab3}>Calculator</div>
-                    <div className="tab justify" id="tab4" onClick={switchTab4}>Weather Forecast</div>
+        {radioValue === '3' ? 
+            <Row >
+                <div className="proj-info-cont justify align">
+                    <h3>Calculator App</h3>
+                    <Button className="offcanvas-desktop-butn" variant="outline-light" onClick={handleShow}>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </Button>
                 </div>
-                <div className="row desktop-proj-img-row justify">
-                    <AdvancedImage cldImg={calculatorDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200})]} />
-                    <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200})]} />
+                <Offcanvas className="offcanvas-desktop" show={show} onHide={handleClose}>
+                    <Offcanvas.Header closeButton>
+                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                    Some text as placeholder. In real life you can have the elements you
+                    have chosen. Like, text, images, lists, etc.
+                    </Offcanvas.Body>
+                </Offcanvas>
+                <div className="desktop-proj-img-row">
+                    <AdvancedImage cldImg={calculatorDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                    <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />       
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <OverlayTrigger
-                        placement="right"
-                        delay={{ show: 250, hide: 400 }}
-                        overlay={renderTooltip}>
-                            <Button variant="outline-light" size='lg' className='demo-butn'>Demo</Button>
-                    </OverlayTrigger>
+                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
-            </div>
-        : <div></div>}
+            </Row>
+        : null}
 
-        {activeTab === 'tab4' ? 
-            <div className="container desktop-projects-container">
-                <div className="row desktop-proj-tab-row">
-                    <div className="tab justify" id="tab1" onClick={switchTab1}>Inventory Management</div>
-                    <div className="tab justify" id="tab2" onClick={switchTab2}>Resume Builder</div>
-                    <div className="tab justify" id="tab3" onClick={switchTab3}>Calculator</div>
-                    <div className="active-tab justify" id="tab4" onClick={switchTab4}>Weather Forecast</div>
+        {radioValue === '4' ? 
+            <Row >
+                <div className="proj-info-cont justify align">
+                    <h3>Weather Forecast App</h3>
+                    <Button className="offcanvas-desktop-butn" variant="outline-light" onClick={handleShow}>
+                        <i class="fa-solid fa-circle-info"></i>
+                    </Button>
                 </div>
-                <div className="row desktop-proj-img-row justify">
-                    <img className="ipad-img" id="ipad-img" src={ipadInventoryManagement} alt=""></img>
-                    <img className="iphone-img" id="iphone-img" src={iphoneInventoryManagement} alt=""></img>
+                <Offcanvas className="offcanvas-desktop" show={show} onHide={handleClose}>
+                    <Offcanvas.Header closeButton>
+                        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        Some text as placeholder. In real life you can have the elements you
+                        have chosen. Like, text, images, lists, etc.
+                    </Offcanvas.Body>
+                </Offcanvas>
+                <div className="desktop-proj-img-row">
+                    <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                    <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />             
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                <OverlayTrigger
-                    placement="right"
-                    delay={{ show: 250, hide: 400 }}
-                    overlay={renderTooltip}>
-                        <Button variant="outline-light" size='lg' className='demo-butn'>Demo</Button>
-                </OverlayTrigger>
+                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
-            </div>
-        : <div></div>}
-    </div>
+            </Row>
+        : null }
+    </Container>
     )
 }
