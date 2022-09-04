@@ -4,17 +4,21 @@ import { OverlayTrigger } from 'react-bootstrap'
 import { Overlay } from 'react-bootstrap'
 import { Tooltip } from 'react-bootstrap'
 import { useRef } from 'react'
-import ipadInventoryManagement from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259617/Portfolio%20Assets/desktop-inventory-management_k9la2v.png'
-import iphoneInventoryManagement from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259616/Portfolio%20Assets/iphone-inventoyr-management_fgdmop.png'
-import ipadResumeBuilder from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259617/Portfolio%20Assets/desktop-resume_c5nmua.png'
-import iphoneResumeBuilder from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259615/Portfolio%20Assets/iphone-resume_se3bux.png'
-import ipadCalculator from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259616/Portfolio%20Assets/desktop-calc_qcz2ez.png'
-import iphoneCalculator from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259616/Portfolio%20Assets/calc-mobile_rfw12l.png'
+import { AdvancedImage } from '@cloudinary/react'
+import { Cloudinary } from '@cloudinary/url-gen'
+import { fill } from '@cloudinary/url-gen/actions/resize'
+import { responsive } from '@cloudinary/react'
+import ipadInventoryManagement from '../project-img/desktop-inventory-management.png'
+import iphoneInventoryManagement from '../project-img/iphone-inventory-management.png'
+import ipadResumeBuilder from '../project-img/desktop-resume.png'
+import iphoneResumeBuilder from '../project-img/iphone-resume.png'
+import ipadCalculator from '../project-img/desktop-calc.png'
+import iphoneCalculator from '../project-img/calc-mobile.png'
+
 
 
 
 export default function Projects () {
-
     
     const [activeTab, setActiveTab] = useState('tab1')
 
@@ -44,13 +48,25 @@ export default function Projects () {
         </Tooltip>
     );
 
-    
+    const cld = new Cloudinary({
+        cloud: {
+          cloudName: 'eletourneau'
+        }
+      });
+    const inventoryManagementMobile = cld.image('iphone-inventoyr-management_qwy4g3');
+    const inventoryManagementDesktop = cld.image('desktop-inventory-management_zwu4o0');
+    const resumeMobile = cld.image('iphone-resume_cu6owm');
+    const resumeDesktop = cld.image('desktop-resume_fqycwx');
+    const calculatorMobile = cld.image('calc-mobile_y1rtmd');
+    const calculatorDesktop = cld.image('desktop-calc_p69q6e');
+
 
     return (
     <div>
 
         {activeTab === 'tab1' ? 
             <div className="container desktop-projects-container">
+
                 <div className="row desktop-proj-tab-row">
                     <div className="active-tab justify" id="tab1" onClick={switchTab1}>Inventory Management</div>
                     <div className="tab justify" id="tab2" onClick={switchTab2}>Resume Builder</div>
@@ -58,8 +74,8 @@ export default function Projects () {
                     <div className="tab justify" id="tab4" onClick={switchTab4}>Weather Forecast</div>
                 </div>
                 <div className="row desktop-proj-img-row justify">
-                    <img className="ipad-img" id="ipad-img" src={ipadInventoryManagement} alt=""></img>
-                    <img className="iphone-img" id="iphone-img" src={iphoneInventoryManagement} alt=""></img>
+                    <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200})]} />
+                    <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200})]} />             
                 </div>
                 <div className='row desktop-proj-butn-row'>
                     <a className='btn btn-lg outline-light demo-butn'>Demo</a>
@@ -77,8 +93,8 @@ export default function Projects () {
                     <div className="tab justify" id="tab4" onClick={switchTab4}>Weather Forecast</div>
                 </div>
                 <div className="row desktop-proj-img-row justify">
-                    <img className="ipad-img" id="ipad-img" src={ipadResumeBuilder} alt=""></img>
-                    <img className="iphone-img" id="iphone-img" src={iphoneResumeBuilder} alt=""></img>
+                    <AdvancedImage cldImg={resumeDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200})]} />
+                    <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200})]} />
                 </div>
                 <div className='row desktop-proj-butn-row'>
                 <OverlayTrigger
@@ -102,8 +118,8 @@ export default function Projects () {
                     <div className="tab justify" id="tab4" onClick={switchTab4}>Weather Forecast</div>
                 </div>
                 <div className="row desktop-proj-img-row justify">
-                    <img className="ipad-img" id="ipad-img" src={ipadCalculator} alt=""></img>
-                    <img className="iphone-img" id="iphone-img" src={iphoneCalculator} alt=""></img>
+                    <AdvancedImage cldImg={calculatorDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200})]} />
+                    <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200})]} />
                 </div>
                 <div className='row desktop-proj-butn-row'>
                     <OverlayTrigger
@@ -130,12 +146,12 @@ export default function Projects () {
                     <img className="iphone-img" id="iphone-img" src={iphoneInventoryManagement} alt=""></img>
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <OverlayTrigger
-                        placement="right"
-                        delay={{ show: 250, hide: 400 }}
-                        overlay={renderTooltip}>
-                            <Button variant="outline-light" size='lg' className='demo-butn'>Demo</Button>
-                    </OverlayTrigger>
+                <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}>
+                        <Button variant="outline-light" size='lg' className='demo-butn'>Demo</Button>
+                </OverlayTrigger>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
             </div>
