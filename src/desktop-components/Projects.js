@@ -4,12 +4,12 @@ import { OverlayTrigger } from 'react-bootstrap'
 import { Overlay } from 'react-bootstrap'
 import { Tooltip } from 'react-bootstrap'
 import { useRef } from 'react'
-import ipadInventoryManagement from '../project-img/desktop-inventory-management.png'
-import iphoneInventoryManagement from '../project-img/iphone-inventory-management.png'
-import ipadResumeBuilder from '../project-img/desktop-resume.png'
-import iphoneResumeBuilder from '../project-img/iphone-resume.png'
-import ipadCalculator from '../project-img/desktop-calc.png'
-import iphoneCalculator from '../project-img/calc-mobile.png'
+import ipadInventoryManagement from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259617/Portfolio%20Assets/desktop-inventory-management_k9la2v.png'
+import iphoneInventoryManagement from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259616/Portfolio%20Assets/iphone-inventoyr-management_fgdmop.png'
+import ipadResumeBuilder from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259617/Portfolio%20Assets/desktop-resume_c5nmua.png'
+import iphoneResumeBuilder from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259615/Portfolio%20Assets/iphone-resume_se3bux.png'
+import ipadCalculator from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259616/Portfolio%20Assets/desktop-calc_qcz2ez.png'
+import iphoneCalculator from 'https://res.cloudinary.com/eletourneau/image/upload/v1662259616/Portfolio%20Assets/calc-mobile_rfw12l.png'
 
 
 
