@@ -9,7 +9,7 @@ import iphoneResumeBuilder from '../project-img/iphone-resume.png'
 import ipadCalculator from '../project-img/desktop-calc.png'
 import iphoneCalculator from '../project-img/calc-mobile.png'
 import { Cloudinary } from '@cloudinary/url-gen'
-import { fill, limitFit } from '@cloudinary/url-gen/actions/resize'
+import { fill, limitFit, pad } from '@cloudinary/url-gen/actions/resize'
 import { responsive, placeholder, AdvancedImage } from '@cloudinary/react'
 
 export default function MobileProjects () {
@@ -175,7 +175,7 @@ const [radioValue, setRadioValue] = useState('1');
                 <Row >
                     <h3 className="justify" >Inventory Management Site</h3>
                     <Row className="mob-img-row">
-                        <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                        <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '90%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
 
@@ -183,14 +183,14 @@ const [radioValue, setRadioValue] = useState('1');
                 <Row >
                     <h3 className="justify">Resume Builder</h3>
                     <Row className="mob-img-row">
-                    <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '60%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                        <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '60%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
             {activeTab === 'tab2' && mobileRadioValue === '2' ? 
                 <Row >
                     <h3 className="justify" >Resume Builder</h3>
                     <Row className="mob-img-row">
-                    <AdvancedImage cldImg={resumeDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                        <AdvancedImage cldImg={resumeDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
 
@@ -198,14 +198,14 @@ const [radioValue, setRadioValue] = useState('1');
                 <Row >
                     <h3 className="justify">Calculator</h3>
                     <Row className="mob-img-row">
-                    <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '60%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                        <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '60%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
             {activeTab === 'tab3' && mobileRadioValue === '2' ? 
                 <Row >
                     <h3 className="justify" >Calculator</h3>
                     <Row className="mob-img-row">
-                    <AdvancedImage cldImg={calculatorDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                        <AdvancedImage cldImg={calculatorDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
 

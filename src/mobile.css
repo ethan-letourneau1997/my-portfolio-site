@@ -203,9 +203,7 @@ hr {
         .mob-img-row {
             display: flex;
             justify-content: center;
-            padding-left: 10%;
-         
-           
+            padding-left: 10%;            
         }
 
         .mob-projects h2 {
@@ -232,7 +230,8 @@ hr {
 
         
         .mob-phone-img {
-            height: 50vh;
+            min-height: 50vh;
+            width: 100vh;
             width: auto;
             margin-bottom: 2vh;
         }
