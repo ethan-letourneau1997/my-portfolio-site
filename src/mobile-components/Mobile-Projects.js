@@ -8,6 +8,9 @@ import ipadResumeBuilder from '../project-img/desktop-resume.png'
 import iphoneResumeBuilder from '../project-img/iphone-resume.png'
 import ipadCalculator from '../project-img/desktop-calc.png'
 import iphoneCalculator from '../project-img/calc-mobile.png'
+import { Cloudinary } from '@cloudinary/url-gen'
+import { fill, limitFit } from '@cloudinary/url-gen/actions/resize'
+import { responsive, placeholder, AdvancedImage } from '@cloudinary/react'
 
 export default function MobileProjects () {
 
@@ -65,6 +68,40 @@ const [radioValue, setRadioValue] = useState('1');
         setMobileDisplay('desktop')
     }
 
+    const cld = new Cloudinary({
+        cloud: {
+          cloudName: 'eletourneau'
+        }
+      });
+    const inventoryManagementMobile = cld.image('iphone-inventoyr-management_qwy4g3');
+    const inventoryManagementDesktop = cld.image('desktop-inventory-management_zwu4o0');
+    const resumeMobile = cld.image('iphone-resume_cu6owm');
+    const resumeDesktop = cld.image('desktop-resume_fqycwx');
+    const calculatorMobile = cld.image('calc-mobile_y1rtmd');
+    const calculatorDesktop = cld.image('desktop-calc_p69q6e');
+
+    inventoryManagementMobile
+        .format('auto')
+        .quality('auto')
+        // .resize(limitFit().width(500).height(500));
+    inventoryManagementDesktop
+        .format('auto')
+        .quality('auto')
+        // .resize(limitFit().width(500).height(500));
+    resumeMobile
+        .format('auto')
+        .quality('auto')
+    resumeDesktop
+        .format('auto')
+        .quality('auto')
+    calculatorMobile
+        .format('auto')
+        .quality('auto')
+    calculatorDesktop
+        .format('auto')
+        .quality('auto')
+
+
 
     return (
         <Container id="projects-mob" className="mob-projects">
@@ -77,23 +114,36 @@ const [radioValue, setRadioValue] = useState('1');
                 <Offcanvas.Header closeButton closeVariant="white">
                 <Offcanvas.Title>Display Options</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
-                    <ButtonGroup>
-                        {radios.map((radio, idx) => (
-                        <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            variant="outline-light"
-                            name="radio"
-                            className="radio"
-                            value={radio.value}
-                            checked={radioValue === radio.value}
-                            onChange={(e) => setRadioValue(e.currentTarget.value)}>
-                            {radio.name}
-                        </ToggleButton>
-                        ))}
-                    </ButtonGroup>
+                <Offcanvas.Body>   
+                    {activeTab === 'tab1' ? 
+                    <ButtonGroup aria-label="Basic example">
+                        <Button  onClick={switchTab1} className="mob-proj-select mob-proj-active" variant="outline-light">Inventory Management</Button>
+                        <Button  onClick={switchTab2} className="mob-proj-select" variant="outline-light">Resume Builder</Button>
+                        <Button  onClick={switchTab3} className="mob-proj-select" variant="outline-light">Calculator App</Button>
+                        <Button  onClick={switchTab4} className="mob-proj-select" variant="outline-light">Weather Forecast</Button>
+                    </ButtonGroup> : null}
+                    {activeTab === 'tab2' ? 
+                    <ButtonGroup aria-label="Basic example">
+                        <Button  onClick={switchTab1} className="mob-proj-select" variant="outline-light">Inventory Management</Button>
+                        <Button  onClick={switchTab2} className="mob-proj-select mob-proj-active" variant="outline-light">Resume Builder</Button>
+                        <Button  onClick={switchTab3} className="mob-proj-select" variant="outline-light">Calculator App</Button>
+                        <Button  onClick={switchTab4} className="mob-proj-select" variant="outline-light">Weather Forecast</Button>
+                    </ButtonGroup> : null}
+                    {activeTab === 'tab3' ? 
+                    <ButtonGroup aria-label="Basic example">
+                        <Button  onClick={switchTab1} className="mob-proj-select" variant="outline-light">Inventory Management</Button>
+                        <Button  onClick={switchTab2} className="mob-proj-select" variant="outline-light">Resume Builder</Button>
+                        <Button  onClick={switchTab3} className="mob-proj-select mob-proj-active" variant="outline-light">Calculator App</Button>
+                        <Button  onClick={switchTab4} className="mob-proj-select" variant="outline-light">Weather Forecast</Button>
+                    </ButtonGroup> : null}
+                    {activeTab === 'tab4' ? 
+                    <ButtonGroup aria-label="Basic example">
+                        <Button  onClick={switchTab1} className="mob-proj-select" variant="outline-light">Inventory Management</Button>
+                        <Button  onClick={switchTab2} className="mob-proj-select" variant="outline-light">Resume Builder</Button>
+                        <Button  onClick={switchTab3} className="mob-proj-select" variant="outline-light">Calculator App</Button>
+                        <Button  onClick={switchTab4} className="mob-proj-select mob-proj-active" variant="outline-light">Weather Forecast</Button>
+                    </ButtonGroup> : null}
+
                
                     <ButtonGroup className="mob-butn-group">
                         {mobileRadios.map((radio, idx) => (
@@ -114,59 +164,59 @@ const [radioValue, setRadioValue] = useState('1');
                 </Offcanvas.Body>
             </Offcanvas>
             
-            {radioValue === '1' && mobileRadioValue === '1' ? 
+            {activeTab === 'tab1' && mobileRadioValue === '1' ? 
                 <Row >
                     <h3 className="justify">Inventory Management Site</h3>
                     <Row className="mob-img-row">
-                        <img className="mob-phone-img" src={iphoneInventoryManagement}></img>
+                        <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '60%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
-            {radioValue === '1' && mobileRadioValue === '2' ? 
+            {activeTab === 'tab1' && mobileRadioValue === '2' ? 
                 <Row >
                     <h3 className="justify" >Inventory Management Site</h3>
                     <Row className="mob-img-row">
-                        <img className="mob-desktop-img" src={ipadInventoryManagement}></img>
+                        <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
 
-            {radioValue === '2' && mobileRadioValue === '1' ? 
+            {activeTab === 'tab2' && mobileRadioValue === '1' ? 
                 <Row >
                     <h3 className="justify">Resume Builder</h3>
                     <Row className="mob-img-row">
-                        <img className="mob-phone-img" src={iphoneResumeBuilder}></img>
+                    <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '60%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
-            {radioValue === '2' && mobileRadioValue === '2' ? 
+            {activeTab === 'tab2' && mobileRadioValue === '2' ? 
                 <Row >
                     <h3 className="justify" >Resume Builder</h3>
                     <Row className="mob-img-row">
-                        <img className="mob-desktop-img" src={ipadResumeBuilder}></img>
+                    <AdvancedImage cldImg={resumeDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
 
-            {radioValue === '3' && mobileRadioValue === '1' ? 
+            {activeTab === 'tab3' && mobileRadioValue === '1' ? 
                 <Row >
                     <h3 className="justify">Calculator</h3>
                     <Row className="mob-img-row">
-                        <img className="mob-phone-img" src={iphoneCalculator}></img>
+                    <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '60%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
-            {radioValue === '3' && mobileRadioValue === '2' ? 
+            {activeTab === 'tab3' && mobileRadioValue === '2' ? 
                 <Row >
                     <h3 className="justify" >Calculator</h3>
                     <Row className="mob-img-row">
-                        <img className="mob-desktop-img" src={ipadCalculator}></img>
+                    <AdvancedImage cldImg={calculatorDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
 
-            {radioValue === '4' && mobileRadioValue === '1' ? 
+            {activeTab === 'tab4' && mobileRadioValue === '1' ? 
                 <Row >
                     <h3 className="justify">Inventory Management Site</h3>
                     <Row className="mob-img-row">
                         <img className="mob-phone-img" src={iphoneInventoryManagement}></img>
                     </Row>
                 </Row> : null}
-            {radioValue === '4' && mobileRadioValue === '2' ? 
+            {activeTab === 'tab4' && mobileRadioValue === '2' ? 
                 <Row >
                     <h3 className="justify" >Inventory Management Site</h3>
                     <Row className="mob-img-row">

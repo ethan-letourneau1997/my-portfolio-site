@@ -52,9 +52,9 @@ export default function Projects () {
     );
 
     const [checked, setChecked] = useState(false);
-    const [radioValue, setRadioValue] = useState('1');
+    const [radioValue, setDesktopRadioValue] = useState('1');
 
-    const radios = [
+    const desktopRadios = [
         { name: 'Inventory Management', value: '1' },
         { name: 'Resume Builder', value: '2' },
         { name: 'Calculator App', value: '3' },
@@ -103,7 +103,7 @@ export default function Projects () {
     <Container className="desktop-projects-container">
 
         <ButtonGroup>
-            {radios.map((radio, idx) => (
+            {desktopRadios.map((radio, idx) => (
             <ToggleButton
                 key={idx}
                 id={`radio-${idx}`}
@@ -113,7 +113,7 @@ export default function Projects () {
                 className="radio-desktop"
                 value={radio.value}
                 checked={radioValue === radio.value}
-                onChange={(e) => setRadioValue(e.currentTarget.value)}>
+                onChange={(e) => setDesktopRadioValue(e.currentTarget.value)}>
                 {radio.name}
             </ToggleButton>
             ))}
@@ -139,8 +139,8 @@ export default function Projects () {
             </Offcanvas>
             <div className="desktop-projects-container">
                 <div className="desktop-proj-img-row">
-                    <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
-                    <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />             
+                    <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />
+                    <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />             
                 </div>
                 <div className='row desktop-proj-butn-row'>
                     <a className='btn btn-lg outline-light demo-butn'>Demo</a>
@@ -169,8 +169,8 @@ export default function Projects () {
                     </Offcanvas.Body>
                 </Offcanvas>
                 <div className="desktop-proj-img-row">
-                    <AdvancedImage cldImg={resumeDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
-                    <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />          
+                    <AdvancedImage cldImg={resumeDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />
+                    <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />          
                 </div>
                 <div className='row desktop-proj-butn-row'>
                     <a className='btn btn-lg outline-light demo-butn'>Demo</a>
@@ -197,8 +197,8 @@ export default function Projects () {
                     </Offcanvas.Body>
                 </Offcanvas>
                 <div className="desktop-proj-img-row">
-                    <AdvancedImage cldImg={calculatorDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
-                    <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />       
+                    <AdvancedImage cldImg={calculatorDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />
+                    <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />       
                 </div>
                 <div className='row desktop-proj-butn-row'>
                     <a className='btn btn-lg outline-light demo-butn'>Demo</a>
@@ -225,8 +225,8 @@ export default function Projects () {
                     </Offcanvas.Body>
                 </Offcanvas>
                 <div className="desktop-proj-img-row">
-                    <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
-                    <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />             
+                    <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '57%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />
+                    <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '25%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />             
                 </div>
                 <div className='row desktop-proj-butn-row'>
                     <a className='btn btn-lg outline-light demo-butn'>Demo</a>

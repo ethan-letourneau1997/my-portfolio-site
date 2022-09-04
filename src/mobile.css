@@ -189,6 +189,17 @@ hr {
             width: fit-content !important;
         }
 
+        .mob-proj-select {
+            font-size: 3.2vw;
+        }
+
+        .mob-proj-active {
+            background-color: white;
+            color: black;
+        }
+
+
+
         .mob-img-row {
             display: flex;
             justify-content: center;
@@ -219,11 +230,6 @@ hr {
                     font-size: 3.2vw;
                 }
 
-
-
-    
-
-            
         
         .mob-phone-img {
             height: 50vh;
@@ -240,6 +246,7 @@ hr {
             grid-template-columns: 1fr 1fr 1fr 1fr;
 
             gap: 15px;
+            padding-top: 20px;
 
             
             /* grid-auto-columns: 1fr 1fr; */
