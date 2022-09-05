@@ -387,7 +387,7 @@ const [radioValue, setRadioValue] = useState('1');
                         </Row>
                         </Card.Text>
                         <Row className="mob-proj-butn-row">
-                            <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
+                            <Button href="https://calculator-ia6lr48wx-ethan-letourneau1997.vercel.app/" variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
                             <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
                         </Row>
                     </Card.Body>

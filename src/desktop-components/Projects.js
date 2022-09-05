@@ -326,7 +326,7 @@ export default function Projects () {
                     <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '22%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />       
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
+                    <a href="https://calculator-ia6lr48wx-ethan-letourneau1997.vercel.app/" className='btn btn-lg outline-light demo-butn'>Demo</a>
                     <a className='btn btn-lg outline-light code-butn'>Code</a>
                 </div> 
             </Row>
