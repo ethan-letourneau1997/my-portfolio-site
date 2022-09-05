@@ -36,12 +36,16 @@
 } */
 .about-me-mobile-container,
 .homepage-mobile,
-.skills-mobile,
 .mobile-projects,
-.carousel,
 .mob-projects {
     background-color: rgb(23, 23, 23);
 }
+
+.skills-mobile {
+    background-color: rgb(28, 28, 28);
+}
+
+
 
 .homepage-mobile {
     background: url(./img/test-background.jpg);
@@ -126,7 +130,7 @@ hr {
 
 .skills-mobile {
     /* height: 100vh; */
-    /* padding-top: 15vh; */
+    padding-top: 10vh;
     padding-bottom: 5vh;
     display: flex;
     flex-direction: column;
@@ -162,20 +166,28 @@ hr {
 
 .mob-projects {
     min-height: 100vh;
-    padding-top: 12vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
+    .switch-proj-butn-row {
+        width: 100vw;
+        position: sticky;
+    }
+
+        .switch-proj-butn {
+            
+        }
+
 
     .offcanvas-backdrop {
         background:none;
     }
         .offcanvas-butn {
-            margin-top: 5vh;
-            margin-bottom: 5vh;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
         }
 
         .offcanvas {
@@ -240,12 +252,49 @@ hr {
             margin-bottom: 5vh;
         }
 
+        
+
+    /*  Offcanvas and Card */
+    
+    .mob-card {
+        background-color: rgb(39, 38, 38);
+        margin-top: 15px;
+        margin-bottom: 40px;
+    }
+
+        .card-title {
+            padding-bottom: 10px;
+        }
+
+        .mobile-header {
+            margin-bottom: 10px;
+            margin-top: 10px;
+          
+        }
+
+        .mob-proj-info {
+          font-size: 3.3vw;
+          padding: 15px;
+        }
+
+        .mobile-about-row {
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .mobile-made-with-row {
+            padding-bottom: 20px;
+        }
+
+        .mob-proj-info span {
+            font-size: 4vw;
+        }
+
         .mob-proj-butn-row {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
 
             gap: 15px;
-            padding-top: 20px;
 
             
             /* grid-auto-columns: 1fr 1fr; */
@@ -265,6 +314,8 @@ hr {
             .mob-code-butn {
                 grid-column: 3 / 4;
             } 
+
+       
 
 
 

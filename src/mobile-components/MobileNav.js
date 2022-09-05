@@ -11,15 +11,10 @@ function MobileNav() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home-mobile">Home</Nav.Link>
-            <Nav.Link href="#about-mobile">About</Nav.Link>
-            <Nav.Link href="#skills-mobile">Skills</Nav.Link>
-            <NavDropdown title="Projects" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Inventory Management</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Resume Builder</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Calculator</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Weather App</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="#home-mob">Home</Nav.Link>
+            <Nav.Link href="#about-mob">About</Nav.Link>
+            <Nav.Link href="#skills-mob">Skills</Nav.Link>
+            <Nav.Link href="#projects-mob">Projects</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

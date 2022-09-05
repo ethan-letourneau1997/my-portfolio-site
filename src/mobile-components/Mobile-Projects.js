@@ -2,6 +2,8 @@ import { Container, Row, Button, Carousel, Col, Offcanvas, CloseButton } from "r
 import { useState } from 'react'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import { Modal } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import ipadInventoryManagement from '../project-img/desktop-inventory-management.png'
 import iphoneInventoryManagement from '../project-img/iphone-inventory-management.png'
 import ipadResumeBuilder from '../project-img/desktop-resume.png'
@@ -11,6 +13,7 @@ import iphoneCalculator from '../project-img/calc-mobile.png'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { fill, limitFit, pad } from '@cloudinary/url-gen/actions/resize'
 import { responsive, placeholder, AdvancedImage } from '@cloudinary/react'
+import mongoIcon from '../icons/icons8-mongodb-a-cross-platform-document-oriented-database-program-80.png'
 
 export default function MobileProjects () {
 
@@ -113,9 +116,16 @@ const [radioValue, setRadioValue] = useState('1');
 
     return (
         <Container id="projects-mob" className="mob-projects">
+            <Row className="switch-proj-butn-row">
+                <Button className="switch-proj-butn" variant="outline-light thick-butn offcanvas-butn" onClick={handleShow}>
+                    Switch Project
+                </Button>
+            </Row>
             <Row>
                 <h2 className="justify">My Projects</h2>
             </Row>
+            
+            
             
 
             <Offcanvas className="offcanvas-mobile" placement="bottom" show={show} onHide={handleClose}>
@@ -232,14 +242,70 @@ const [radioValue, setRadioValue] = useState('1');
                     </Row>
                 </Row> : null}
 
+                
+            
+            {activeTab === 'tab1' ? 
+                <Card className="mob-card" style={{ width: '18rem' }}>
+                    <Card.Body>
+                        <Card.Title className="justify card-title"></Card.Title>
+                        <Card.Subtitle className="mobile-header bold justify">About</Card.Subtitle>
+                        <Card.Text>
+                            An inventory management application for the fictional company 
+                            'Great Outdoors'. It is a CRUD (create, read, update delete) application 
+                            that stores records in MongoDB. Feel free to play around by adding or editing items
+                        </Card.Text>
+                        <Card.Subtitle className="mobile-header bold justify">Skills Used</Card.Subtitle>
+                        <Card.Text>
+                        <Row>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-html5"></i>
+                                    <p>HTML5</p>  
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-css3-alt"></i>
+                                    <p>CSS3</p>   
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-square-js"></i>
+                                    <p>JavaScript</p>   
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row> 
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-bootstrap"></i>
+                                    <p>Bootstrap</p>  
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-node-js"></i>
+                                    <p>node.js</p> 
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <img src={mongoIcon}></img>
+                                    <p>MongoDB</p>
+                                </div>
+                            </Col>
+                        </Row>
+                        </Card.Text>
+                        <Row className="mob-proj-butn-row">
+                            <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
+                            <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
+                        </Row>
+                    </Card.Body>
+                </Card> : null }
            
 
-            {radioValue === '1' ? 
-            <Row className="mob-proj-butn-row">
-                <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
-                <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
-            </Row>
-            : null}
+        
             {radioValue === '2' ? 
             <Row className="mob-proj-butn-row">
                 <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
@@ -258,11 +324,7 @@ const [radioValue, setRadioValue] = useState('1');
                 <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
             </Row>
             : null}
-
-            
-<Button variant="light thick-butn offcanvas-butn" onClick={handleShow}>
-                See Other Projects
-            </Button>
+        
             
         </Container>
     )
