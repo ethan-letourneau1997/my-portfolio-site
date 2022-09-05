@@ -46,7 +46,7 @@
 }
 
 .skills-mobile {
-    background-color: rgb(28, 28, 28);
+    background-color: rgb(37, 37, 37);
 }
 
 
@@ -82,12 +82,16 @@ hr {
         background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke='rgba(255,255,255)' stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
     }
 
-        .navbar-brand,
-        .nav-link,
-        .dropdown-item
-        {
-            color: white !important;
+        .nav-container {
+            background-color: rgba(var(--bs-dark-rgb));
         }
+
+            .navbar-brand,
+            .nav-link,
+            .dropdown-item
+            {
+                color: white !important;
+            }
 
         .dropdown-menu {
             background-color: rgba(var(--bs-dark-rgb));
@@ -184,11 +188,14 @@ hr {
         height: 16vh;
         top: 0;
         align-items: flex-end;
+        background-color: rgb(37, 37, 37);
+   
     }
 
         .switch-proj-butn {
-            height: 6vh;
+            height: 7vh;
             background-color: rgb(23, 23, 23);
+            margin-bottom: 0 !important;
         }
 
 
@@ -229,8 +236,9 @@ hr {
         }
 
         .mob-projects h2 {
-        
+            padding-top: 20px;
             height: fit-content;
+            padding-bottom: 20px;
         }
 
         .mob-projects h3 {

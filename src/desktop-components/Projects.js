@@ -111,7 +111,6 @@ export default function Projects () {
 
     return (
     <Container className="desktop-projects-container">
-
         <ButtonGroup>
             {desktopRadios.map((radio, idx) => (
             <ToggleButton

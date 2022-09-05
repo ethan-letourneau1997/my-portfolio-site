@@ -303,15 +303,146 @@ const [radioValue, setRadioValue] = useState('1');
                         </Row>
                     </Card.Body>
                 </Card> : null }
+            {activeTab === 'tab2' ? 
+                <Card className="mob-card" style={{ width: '18rem' }}>
+                    <Card.Body>
+                        <Card.Title className="justify card-title"></Card.Title>
+                        <Card.Subtitle className="mobile-header bold justify">About</Card.Subtitle>
+                        <Card.Text>
+                        A React application that allows a user to enter and change information on their resume 
+                        </Card.Text>
+                        <Card.Subtitle className="mobile-header bold justify">Skills Used</Card.Subtitle>
+                        <Card.Text>
+                        <Row>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-html5"></i>
+                                    <p>HTML5</p>  
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-css3-alt"></i>
+                                    <p>CSS3</p>   
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-square-js"></i>
+                                    <p>JavaScript</p>   
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row> 
+                        <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-react"></i>
+                                    <p>React</p>  
+                                </div>
+                            </Col>
+                            <Col>
+                  
+                            </Col>
+                            <Col>
+                 
+                            </Col>
+                        </Row>
+                        </Card.Text>
+                        <Row className="mob-proj-butn-row">
+                            <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
+                            <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
+                        </Row>
+                    </Card.Body>
+                </Card> : null }
+
+            {activeTab === 'tab3' ? 
+                <Card className="mob-card" style={{ width: '18rem' }}>
+                    <Card.Body>
+                        <Card.Title className="justify card-title"></Card.Title>
+                        <Card.Subtitle className="mobile-header bold justify">About</Card.Subtitle>
+                        <Card.Text>
+                        A simple calculator application made with pure JavaScript 
+                        </Card.Text>
+                        <Card.Subtitle className="mobile-header bold justify">Skills Used</Card.Subtitle>
+                        <Card.Text>
+                        <Row>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-html5"></i>
+                                    <p>HTML5</p>  
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-css3-alt"></i>
+                                    <p>CSS3</p>   
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-square-js"></i>
+                                    <p>JavaScript</p>   
+                                </div>
+                            </Col>
+                        </Row>
+                        </Card.Text>
+                        <Row className="mob-proj-butn-row">
+                            <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
+                            <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
+                        </Row>
+                    </Card.Body>
+                </Card> : null }
+
+            {activeTab === 'tab4' ? 
+                <Card className="mob-card" style={{ width: '18rem' }}>
+                    <Card.Body>
+                        <Card.Title className="justify card-title"></Card.Title>
+                        <Card.Subtitle className="mobile-header bold justify">About</Card.Subtitle>
+                        <Card.Text>
+                        A weather forecasting Application that makes use of OpenWeather API to provide users with weather data based on searched locations 
+                        </Card.Text>
+                        <Card.Subtitle className="mobile-header bold justify">Skills Used</Card.Subtitle>
+                        <Card.Text>
+                        <Row>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-html5"></i>
+                                    <p>HTML5</p>  
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-css3-alt"></i>
+                                    <p>CSS3</p>   
+                                </div>
+                            </Col>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-square-js"></i>
+                                    <p>JavaScript</p>   
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <div className="mobile-skill">
+                                    <i className="fa-brands fa-bootstrap"></i>
+                                    <p>Bootstrap</p>  
+                                </div>
+                            </Col>
+                            <Col></Col>
+                            <Col></Col>
+                        </Row> 
+                        </Card.Text>
+                        <Row className="mob-proj-butn-row">
+                            <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
+                            <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
+                        </Row>
+                    </Card.Body>
+                </Card> : null }
            
 
         
-            {radioValue === '2' ? 
-            <Row className="mob-proj-butn-row">
-                <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
-                <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
-            </Row>
-            : null}
             {radioValue === '3' ? 
             <Row className="mob-proj-butn-row">
                 <Button variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>

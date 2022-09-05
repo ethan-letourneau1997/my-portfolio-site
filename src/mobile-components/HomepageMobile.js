@@ -3,7 +3,7 @@ import { Container, Row, Button } from "react-bootstrap";
 export default function HomepageMobile () {
 
     return (
-        <Container fluid className=" homepage-mobile">
+        <Container id="home-mob" fluid className=" homepage-mobile">
             <Row>
                 <h1 className="justify">Ethan Letourneau</h1>
             </Row>
