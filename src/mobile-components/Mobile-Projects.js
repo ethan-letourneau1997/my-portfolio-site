@@ -175,7 +175,7 @@ const [radioValue, setRadioValue] = useState('1');
                 <Row >
                     <h3 className="justify" >Inventory Management Site</h3>
                     <Row className="mob-img-row">
-                        <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '90%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
+                        <AdvancedImage cldImg={inventoryManagementDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
 

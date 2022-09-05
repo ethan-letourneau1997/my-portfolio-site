@@ -203,7 +203,8 @@ hr {
         .mob-img-row {
             display: flex;
             justify-content: center;
-            padding-left: 10%;            
+            padding-left: 10%;  
+            width: 100vw;          
         }
 
         .mob-projects h2 {
