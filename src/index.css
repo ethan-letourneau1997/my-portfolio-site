@@ -23,6 +23,9 @@
 } */
 
 /* GENERAL STYLES */
+.bold {
+  font-weight: bold;
+}
 
 .justify {
   display: flex; 
@@ -141,12 +144,7 @@
   
     }
 
-    .offcanvas-desktop-butn {
-      width: fit-content;
-      padding: 0;
-      border: 0;
-      background-color: transparent !important;
-    }
+
 
 
   .desktop-proj-tab-row {
@@ -217,4 +215,42 @@
       color: black;
     }
 
+    /*  Offcanvas and Card */
+
+    .offcanvas-desktop-butn {
+      width: fit-content;
+      padding: 0;
+      border: 0;
+      background-color: transparent !important;
+    }
+
+      .offcanvas-header {
+     
+      }
+
+      .offcanvas-title {
+
+      }
+    
+      .card {
+        background-color: rgb(86, 85, 85);
+      }
+      .card-about-row {
+        padding-bottom: 2vh;
+
+      }
+        .card-made-with-row{
+          padding-bottom: 2.5vh;
+          padding-top: 2vh;
+        }
+
+      .card-text {
+        /* color: black; */
+      }
+      .card-about {
+        /* color: black; */
+        /* font-weight: bold; */
+      }
+
+     
     

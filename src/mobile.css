@@ -108,7 +108,6 @@ hr {
 /* Mobile About */
 
 .about-me-mobile-container {
-    height: 100vh;
     padding-top: 15vh;
     padding-bottom: 5vh;
     display: flex;

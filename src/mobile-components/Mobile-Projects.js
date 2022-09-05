@@ -79,6 +79,8 @@ const [radioValue, setRadioValue] = useState('1');
     const resumeDesktop = cld.image('desktop-resume_fqycwx');
     const calculatorMobile = cld.image('calc-mobile_y1rtmd');
     const calculatorDesktop = cld.image('desktop-calc_p69q6e');
+    const weatherMobile = cld.image('mobile-weather_wegpxe');
+    const weatherDesktop = cld.image('desktop-weather_xbtfha');
 
     inventoryManagementMobile
         .format('auto')
@@ -98,6 +100,12 @@ const [radioValue, setRadioValue] = useState('1');
         .format('auto')
         .quality('auto')
     calculatorDesktop
+        .format('auto')
+        .quality('auto')
+    weatherMobile
+        .format('auto')
+        .quality('auto')
+    weatherDesktop
         .format('auto')
         .quality('auto')
 
@@ -213,14 +221,14 @@ const [radioValue, setRadioValue] = useState('1');
                 <Row >
                     <h3 className="justify">Inventory Management Site</h3>
                     <Row className="mob-img-row">
-                        <img className="mob-phone-img" src={iphoneInventoryManagement}></img>
+                        <AdvancedImage cldImg={weatherMobile} style={{maxWidth: '60%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
             {activeTab === 'tab4' && mobileRadioValue === '2' ? 
                 <Row >
                     <h3 className="justify" >Inventory Management Site</h3>
                     <Row className="mob-img-row">
-                        <img className="mob-desktop-img" src={ipadInventoryManagement}></img>
+                        <AdvancedImage cldImg={weatherDesktop} style={{maxWidth: '100%'}} plugins={[responsive({steps: 200}), placeholder({mode: 'blur'})]} />
                     </Row>
                 </Row> : null}
 
