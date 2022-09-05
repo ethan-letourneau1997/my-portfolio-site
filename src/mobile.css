@@ -23,6 +23,10 @@
     font-size: 3.3vw !important;
 }
 
+.navbar {
+    height: 8vh;
+}
+
 /* .about-me-mobile-container,
 .homepage-mobile,
 .skills-mobile,
@@ -170,15 +174,21 @@ hr {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+   
+
 }
 
     .switch-proj-butn-row {
         width: 100vw;
         position: sticky;
+        height: 16vh;
+        top: 0;
+        align-items: flex-end;
     }
 
         .switch-proj-butn {
-            
+            height: 6vh;
+            background-color: rgb(23, 23, 23);
         }
 
 
