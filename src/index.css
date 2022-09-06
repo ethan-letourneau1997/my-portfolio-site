@@ -7,20 +7,11 @@
   font-weight: 400;
 }
 
-
-
-
 .fp-section {
   height: 100vh !important;
   padding-top: 5%;
   padding-bottom: 5%;
 }
-
-
-
-/* .fp-tooltip {
-  top: 0 !important;
-} */
 
 /* GENERAL STYLES */
 .bold {
@@ -139,6 +130,8 @@
     gap: 1vw;
     padding-top: 3vh;
     padding-bottom: 2vh;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
   }
 
     .fa-circle-info {
@@ -225,6 +218,10 @@
       padding: 0;
       border: 0;
       background-color: transparent !important;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border: 2px solid white;
     }
 
       .offcanvas-header {

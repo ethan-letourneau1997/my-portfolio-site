@@ -1,23 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import background from './img/test-background.jpg'
-import ReactFullpage from '@fullpage/react-fullpage';
-import Homepage from './desktop-components/Homepage';
-import About from './desktop-components/About';
-import Skills from './desktop-components/Skills';
-import Projects from './desktop-components/Projects';
-import MobileNav from './mobile-components/MobileNav';
-import HomepageMobile from './mobile-components/HomepageMobile';
-import AboutMobile from './mobile-components/About-Mobile';
-import SkillsMobile from './mobile-components/Skills-Mobile';
-import ProjectsMobile from './mobile-components/Projects-Mobile';
-import MobileProjects from './mobile-components/Mobile-Projects';
-import './index.css';
-import './mobile.css'
-import './multiple-circles.css';
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ReactFullpage from "@fullpage/react-fullpage";
+import background from "./img/test-background.jpg";
+import Homepage from "./desktop-components/Homepage";
+import About from "./desktop-components/About";
+import Skills from "./desktop-components/Skills";
+import Projects from "./desktop-components/Projects";
+import MobileNav from "./mobile-components/MobileNav";
+import HomepageMobile from "./mobile-components/HomepageMobile";
+import AboutMobile from "./mobile-components/About-Mobile";
+import SkillsMobile from "./mobile-components/Skills-Mobile";
+import MobileProjects from "./mobile-components/Mobile-Projects";
+import "./index.css";
+import "./mobile.css";
+import "./multiple-circles.css";
 
-
+// eslint-disable-next-line react/prefer-stateless-function, no-unused-vars
 class MySection extends React.Component {
   render() {
     return (
@@ -30,60 +31,81 @@ class MySection extends React.Component {
 
 const anchors = ["Home", "About", "Skills", "Projects"];
 
-const FullpageWrapper = () => (
-  <ReactFullpage
-    anchors={anchors}
-    navigation
-    navigationTooltips={anchors}
-    autoScrolling
-    responsiveWidth={768}
-    showActiveTooltip
-    licenseKey={'KRA6H-Q2PJJ-6S9J9-ICUYH-NUBKL'}
-    scrollingSpeed={1500}
-    css3={false}
-    onLeave={(origin, destination, direction) => {
-      console.log("onLeave event", { origin, destination, direction });
-    }}
-    render={({ state, fullpageApi }) => {
-      console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
+function FullpageWrapper() {
+  return (
+    <ReactFullpage
+      anchors={anchors}
+      navigation
+      navigationTooltips={anchors}
+      autoScrolling
+      responsiveWidth={768}
+      showActiveTooltip
+      licenseKey="KRA6H-Q2PJJ-6S9J9-ICUYH-NUBKL"
+      scrollingSpeed={1500}
+      css3={false}
+      onLeave={(origin, destination, direction) => {
+        console.log("onLeave event", { origin, destination, direction });
+      }}
+      render={({ state, fullpageApi }) => {
+        console.log("render prop change", state, fullpageApi); // eslint-disable-line no-console
 
-      return (
-        <div>
-            <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed', backgroundPosition:'center' }}>
+        return (
+          <div>
+            <div
+              className="section fp-section"
+              style={{
+                backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center",
+              }}
+            >
               <Homepage />
             </div>
-            <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed', backgroundPosition:'center' }}>
+            <div
+              className="section fp-section"
+              style={{
+                backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center",
+              }}
+            >
               <About />
             </div>
-            <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed', backgroundPosition:'center' }}>
+            <div
+              className="section fp-section"
+              style={{
+                backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center",
+              }}
+            >
               <Skills />
             </div>
-            <div className='section fp-section' style={{ backgroundImage: `url(${background})`, backgroundSize:'cover', backgroundAttachment:'fixed', backgroundPosition:'center' }}>
+            <div
+              className="section fp-section"
+              style={{
+                backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center",
+              }}
+            >
               <Projects />
             </div>
-        </div>
-      );
-    }}
-  />
-);
+          </div>
+        );
+      }}
+    />
+  );
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <div className='d-none d-md-block'>
+    <div className="d-none d-md-block">
       <FullpageWrapper />
     </div>
-    <div className='d-md-none mobile-display'>
+    <div className="d-md-none mobile-display">
       <MobileNav />
       <HomepageMobile />
       <AboutMobile />
       <SkillsMobile />
       <MobileProjects />
     </div>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-
