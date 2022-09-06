@@ -1,57 +1,24 @@
-import { Container, Row, Button, Carousel, Col, Offcanvas, CloseButton } from "react-bootstrap";
+import { Container, Row, Button, Col, Offcanvas } from "react-bootstrap";
 import { useState } from 'react'
-import { OverlayTrigger } from 'react-bootstrap'
-import { Overlay } from 'react-bootstrap'
 import { Tooltip } from 'react-bootstrap'
-import { useRef } from 'react'
 import { ButtonGroup } from 'react-bootstrap'
 import { ToggleButton } from 'react-bootstrap'
-import { Card } from "react-bootstrap";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import { Cloudinary } from '@cloudinary/url-gen'
-import { fill, limitFit } from '@cloudinary/url-gen/actions/resize'
 import { responsive, placeholder, AdvancedImage } from '@cloudinary/react'
-import ipadInventoryManagement from '../project-img/desktop-inventory-management.png'
-import iphoneInventoryManagement from '../project-img/iphone-inventory-management.png'
-import ipadResumeBuilder from '../project-img/desktop-resume.png'
-import iphoneResumeBuilder from '../project-img/iphone-resume.png'
-import ipadCalculator from '../project-img/desktop-calc.png'
-import iphoneCalculator from '../project-img/calc-mobile.png'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import mongoIcon from '../icons/icons8-mongodb-a-cross-platform-document-oriented-database-program-80.png'
-
-
-
 
 export default function Projects () {
     
-    const [activeTab, setActiveTab] = useState('tab1')
 
-    const switchTab1 = () => {
-        setActiveTab('tab1')
-        console.log(activeTab)
-    }
-
-    const switchTab2 = () => {
-        setActiveTab('tab2')
-        console.log(activeTab)
-    }
-
-    const switchTab3 = () => {
-        setActiveTab('tab3')
-        console.log(activeTab)
-    }
-
-    const switchTab4 = () => {
-        setActiveTab('tab4')
-        console.log(activeTab)
-    }
+    
 
     const renderTooltip = (props) => (
         <Tooltip id="button-tooltip" {...props}>
-          Coming Soon
+            Coming Soon!
         </Tooltip>
-    );
+    )
+      
 
     const [checked, setChecked] = useState(false);
     const [radioValue, setDesktopRadioValue] = useState('1');
@@ -73,7 +40,7 @@ export default function Projects () {
     const resumeMobile = cld.image('iphone-resume_cu6owm');
     const resumeDesktop = cld.image('desktop-resume_fqycwx');
     const calculatorMobile = cld.image('calc-mobile_y1rtmd');
-    const calculatorDesktop = cld.image('desktop-calc_p69q6e');
+    const calculatorDesktop = cld.image('desktop-calc_g7sgre');
     const weatherMobile = cld.image('mobile-weather_wegpxe');
     const weatherDesktop = cld.image('desktop-weather_xbtfha');
 
@@ -201,8 +168,8 @@ export default function Projects () {
                     <AdvancedImage cldImg={inventoryManagementMobile} style={{maxWidth: '22%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />             
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
-                    <a className='btn btn-lg outline-light code-butn'>Code</a>
+                    <a href="https://great-outdoors-inv-management.herokuapp.com/catalog/items" className='btn btn-lg outline-light demo-butn' target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/ethan-letourneau1997/Great-Outdoors-Inventory-Management" className='btn btn-lg outline-light code-butn' target="_blank" rel="noopener noreferrer">Code</a>
                 </div> 
             </div>
                
@@ -266,8 +233,8 @@ export default function Projects () {
                     <AdvancedImage cldImg={resumeMobile} style={{maxWidth: '22%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />          
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
-                    <a className='btn btn-lg outline-light code-butn'>Code</a>
+                    <a href="https://resume-project-two.vercel.app/" className='btn btn-lg outline-light demo-butn' target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/ethan-letourneau1997/resume-project" className='btn btn-lg outline-light code-butn' target="_blank" rel="noopener noreferrer">Code</a>
                 </div> 
             </Row>
         : null}
@@ -326,8 +293,8 @@ export default function Projects () {
                     <AdvancedImage cldImg={calculatorMobile} style={{maxWidth: '22%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />       
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <a href="https://calculator-ia6lr48wx-ethan-letourneau1997.vercel.app/" className='btn btn-lg outline-light demo-butn'>Demo</a>
-                    <a className='btn btn-lg outline-light code-butn'>Code</a>
+                    <a href="https://calculator-ia6lr48wx-ethan-letourneau1997.vercel.app/" className='btn btn-lg outline-light demo-butn' target="_blank" rel="noopener noreferrer" >Demo</a>
+                    <a href="https://github.com/ethan-letourneau1997/calculator" className='btn btn-lg outline-light code-butn' target="_blank" rel="noopener noreferrer">Code</a>
                 </div> 
             </Row>
         : null}
@@ -389,8 +356,15 @@ export default function Projects () {
                     <AdvancedImage cldImg={weatherMobile} style={{maxWidth: '22%'}} plugins={[responsive({steps: 100}), placeholder({mode: 'blur'})]} />             
                 </div>
                 <div className='row desktop-proj-butn-row'>
-                    <a className='btn btn-lg outline-light demo-butn'>Demo</a>
-                    <a className='btn btn-lg outline-light code-butn'>Code</a>
+                <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                    >
+                    <a href="" className='btn btn-lg outline-light demo-butn' target="_blank" rel="noopener noreferrer">Demo</a>
+                </OverlayTrigger>
+                    
+                    <a href="https://github.com/ethan-letourneau1997/weather-app" className='btn btn-lg outline-light code-butn' target="_blank" rel="noopener noreferrer">Code</a>
                 </div> 
             </Row>
         : null }

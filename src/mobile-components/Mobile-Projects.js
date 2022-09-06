@@ -1,15 +1,8 @@
-import { Container, Row, Button, Carousel, Col, Offcanvas, CloseButton } from "react-bootstrap";
+import { Container, Row, Button, Col, Offcanvas } from "react-bootstrap";
 import { useState } from 'react'
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import { Modal } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import ipadInventoryManagement from '../project-img/desktop-inventory-management.png'
-import iphoneInventoryManagement from '../project-img/iphone-inventory-management.png'
-import ipadResumeBuilder from '../project-img/desktop-resume.png'
-import iphoneResumeBuilder from '../project-img/iphone-resume.png'
-import ipadCalculator from '../project-img/desktop-calc.png'
-import iphoneCalculator from '../project-img/calc-mobile.png'
 import { Cloudinary } from '@cloudinary/url-gen'
 import { fill, limitFit, pad } from '@cloudinary/url-gen/actions/resize'
 import { responsive, placeholder, AdvancedImage } from '@cloudinary/react'
@@ -387,7 +380,7 @@ const [radioValue, setRadioValue] = useState('1');
                         </Row>
                         </Card.Text>
                         <Row className="mob-proj-butn-row">
-                            <Button href="https://calculator-ia6lr48wx-ethan-letourneau1997.vercel.app/" variant="outline-light" className="mob-proj-butn mob-demo-butn">Demo</Button>
+                            <Button href="https://calculator-ia6lr48wx-ethan-letourneau1997.vercel.app/" variant="outline-light" className="mob-proj-butn mob-demo-butn" target="_blank" rel="noopener noreferrer" >Demo</Button>
                             <Button variant="outline-light" className="mob-proj-butn mob-code-butn">Code</Button>
                         </Row>
                     </Card.Body>
