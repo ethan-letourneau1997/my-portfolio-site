@@ -1,5 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/react-in-jsx-scope */
-import React, { Container, Row, Button } from "react-bootstrap";
+import React, {
+  Container, Row, Button,
+} from "react-bootstrap";
 
 export default function Homepage() {
   return (

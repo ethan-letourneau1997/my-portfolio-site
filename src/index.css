@@ -49,14 +49,14 @@
 
 /* DESKTOP HOMEPAGE */
 
-  .desktop-home-container h1 {
-    font-size: 3.5vw;
-  }
+    .desktop-home-container h1 {
+      font-size: 3.5vw;
+    }
 
-  .desktop-home-container h2 {
-    font-size: 2.5vw;
-    padding-bottom: 10vh;
-  }
+    .desktop-home-container h2 {
+      font-size: 2.5vw;
+      padding-bottom: 10vh;
+    }
 
 /* DESKTOP ABOUT ME */
 
@@ -184,7 +184,8 @@
       }
 
     .desktop-proj-butn-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       justify-content: center;
       gap: 20%;
       padding-top: 2vh;
@@ -202,6 +203,10 @@
       .code-butn:hover {
         background-color: white;
         color: black;
+      }
+
+      .demo-butn {
+        grid-column: 2 / 3;
       }
 
 /* Offcanvas and Card */
@@ -229,3 +234,46 @@
         padding-bottom: 2.5vh;
         padding-top: 2vh;
       }    
+
+
+/* Attribution Popover */
+
+
+.attribution-row {
+  align-self: flex-start;
+  justify-self: flex-start;
+  width: 100vw;
+  height: 40vh;
+}
+
+  
+
+  .popover-header {
+    background-color: rgb(23, 23, 23);
+  }
+
+    .popover-body a {
+      color: white;
+    }
+
+    .popover-body p {
+      font-style: italic;
+    }
+
+    .divide {
+      border-bottom: 1px solid white;
+      width: 86%;
+      margin-left: 7%;
+      margin-top: 5%;
+    }
+
+    .popover-icon-row {
+      display: flex !important;
+    }
+
+  .attribution-butn {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 10px;
+    align-self: flex-end;
+  }
