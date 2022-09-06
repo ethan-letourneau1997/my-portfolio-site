@@ -477,7 +477,7 @@ export default function Projects() {
                 delay={{ show: 250, hide: 400 }}
                 overlay={renderTooltip}
               >
-                <Button size="large" disabled className="outline-light demo-butn">Demo</Button>
+                <Button size="large" disabled className="outline-light demo-butn">Demo </Button>
               </OverlayTrigger>
               <a href="https://github.com/ethan-letourneau1997/weather-app" className="btn btn-lg outline-light code-butn" target="_blank" rel="noopener noreferrer">Code</a>
               <OverlayTrigger trigger="hover" placement="left" overlay={popover}>
