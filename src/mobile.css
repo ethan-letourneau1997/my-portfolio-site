@@ -27,17 +27,8 @@
     height: 8vh;
 }
 
-/* .about-me-mobile-container,
-.homepage-mobile,
-.skills-mobile,
-.mobile-projects,
-.carousel,
-.mob-projects {
-    background: url(./img/test-background.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-} */
+/* Backgrounds */
+
 .about-me-mobile-container,
 .homepage-mobile,
 .mobile-projects,
@@ -49,7 +40,7 @@
     background-color: rgb(37, 37, 37);
 }
 
-
+/* Mobile Homepage */
 
 .homepage-mobile {
     background: url(./img/test-background.jpg);
@@ -73,10 +64,19 @@ hr {
     border-width: 2px;
 }
 
+.homepage-mobile {
+    height: 100vh;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.homepage-mobile h2 {
+    padding-bottom: 25%;
+}
 
-/* Navbar */
+/* Mobile Navbar */
 
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke='rgba(255,255,255)' stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e");
@@ -102,20 +102,6 @@ hr {
             color: white !important;
             font-weight: bold;
         }
-
-/* Mobile Homepage */
-
-.homepage-mobile {
-    height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.homepage-mobile h2 {
-    padding-bottom: 25%;
-}
 
 /* Mobile About */
 
@@ -178,8 +164,6 @@ hr {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-   
-
 }
 
     .switch-proj-butn-row {
@@ -189,7 +173,6 @@ hr {
         top: 0;
         align-items: flex-end;
         background-color: rgb(37, 37, 37);
-   
     }
 
         .switch-proj-butn {
@@ -197,7 +180,6 @@ hr {
             background-color: rgb(23, 23, 23);
             margin-bottom: 0 !important;
         }
-
 
     .offcanvas-backdrop {
         background:none;
@@ -225,8 +207,6 @@ hr {
             background-color: white;
             color: black;
         }
-
-
 
         .mob-img-row {
             display: flex;
@@ -257,8 +237,7 @@ hr {
                 .mobile-radio {
                     font-size: 3.2vw;
                 }
-
-        
+   
         .mob-phone-img {
             min-height: 50vh;
             width: 100vh;
@@ -270,9 +249,7 @@ hr {
             margin-bottom: 5vh;
         }
 
-        
-
-    /*  Offcanvas and Card */
+/*  Offcanvas and Card */
     
     .mob-card {
         background-color: rgb(39, 38, 38);
@@ -287,7 +264,6 @@ hr {
         .mobile-header {
             margin-bottom: 10px;
             margin-top: 10px;
-          
         }
 
         .mob-proj-info {
@@ -311,18 +287,13 @@ hr {
         .mob-proj-butn-row {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-
             gap: 15px;
-
-            
-            /* grid-auto-columns: 1fr 1fr; */
         }
 
             .mob-proj-butn {
                 width: fit-content;
                 display: flex;
                 justify-self: center;
-                /* gap: 40px; */
             }
 
             .mob-demo-butn {

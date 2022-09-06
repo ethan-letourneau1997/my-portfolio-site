@@ -33,7 +33,7 @@ export default function Skills() {
               <p>Bootstrap</p>
             </div>
             <div className="skill">
-              <p src={webpackIcon} />
+              <img src={webpackIcon} alt="Webpack icon" />
               <p>Webpack</p>
             </div>
             <div className="skill">
@@ -49,7 +49,7 @@ export default function Skills() {
               <p>Java</p>
             </div>
             <div className="skill">
-              <p src={mongoIcon} />
+              <img src={mongoIcon} alt="mongoDB icon" />
               <p>MongoDB</p>
             </div>
           </div>

@@ -1,256 +1,231 @@
-* {
-  color: white;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-}
-
-.fp-section {
-  height: 100vh !important;
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-
 /* GENERAL STYLES */
-.bold {
-  font-weight: bold;
-}
 
-.justify {
-  display: flex; 
-  justify-content: center;
-}
-
-.align {
-  display: flex;
-  align-items: center;
-}
-
-.page-butn-row {
-  display: flex;
-  justify-content: center;
-}
-
-  .go-to-butn {
-    width: fit-content !important;
-    color: white !important;
-    border: 2px solid white !important;
+  .bold {
+    font-weight: bold;
   }
 
-  .go-to-butn:hover {
-    color: black !important;
-    background-color: white;
+  .justify {
+    display: flex; 
+    justify-content: center;
   }
 
-  #button-tooltip {
+  .align {
+    display: flex;
+    align-items: center;
   }
+
+  .page-butn-row {
+    display: flex;
+    justify-content: center;
+  }
+
+/* Full Document */
+
+  * {
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
+
+    .fp-section {
+      height: 100vh !important;
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+
+      .go-to-butn {
+        width: fit-content !important;
+        color: white !important;
+        border: 2px solid white !important;
+      }
+
+      .go-to-butn:hover {
+        color: black !important;
+        background-color: white;
+      }
 
 /* DESKTOP HOMEPAGE */
 
-.desktop-home-container h1 {
-  font-size: 3.5vw;
-}
+  .desktop-home-container h1 {
+    font-size: 3.5vw;
+  }
 
-.desktop-home-container h2 {
-  font-size: 2.5vw;
-  padding-bottom: 10vh;
-}
+  .desktop-home-container h2 {
+    font-size: 2.5vw;
+    padding-bottom: 10vh;
+  }
 
 /* DESKTOP ABOUT ME */
-.about-me-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-  .about-me-text {
-    width: 70%;
-    padding-top: 2vh;
-  }
 
-/* DESKTOP SKILLS */
-.skills-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
-}
-
-  .skills-header-container {
+  .about-me-container {
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
   }
-    .desktop-skills-grid {
-      padding-top: 5vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    .about-me-text {
       width: 70%;
+      padding-top: 2vh;
     }
 
-      .skill {
+/* DESKTOP SKILLS */
+
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+    .skills-header-container {
+      display: flex;
+      flex-direction: column;
+    }
+      .desktop-skills-grid {
+        padding-top: 5vh;
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        align-items: center;
-        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 70%;
       }
 
-        .skill i {
-          font-size: 3rem;
-          justify-self: center;
+        .skill {
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          align-items: center;
+          justify-content: center;  
         }
 
-        .skill img {
-          height: 50px;
+        .skill .fa-brands {
+          font-size: 3rem;
           justify-self: center;
+          align-self: center;
         }
+
+          .skill i {
+            font-size: 3rem;
+            justify-self: center;
+          }
+
+          .skill img {
+            height: 50px;
+            justify-self: center;
+          }
 
 /* DESKTOP PROJECTS */
 
-.desktop-projects-container {
-  display: flex;
-  flex-direction: column;
-
-}
-
-  .radio-desktop {
-
+  .desktop-projects-container {
+    display: flex;
+    flex-direction: column;
   }
 
-  .offcanvas-desktop {
+    .proj-info-cont {
+      gap: 1vw;
+      padding-top: 3vh;
+      padding-bottom: 2vh;
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+    }
+
+      .fa-circle-info {
+        color: white;
+        font-size: 1.5vw;
     
-  }
+      }
 
-  .proj-info-cont {
-    gap: 1vw;
-    padding-top: 3vh;
-    padding-bottom: 2vh;
-    display: grid;
-    grid-template-columns: 1fr max-content 1fr;
-  }
-
-    .fa-circle-info {
-      color: white;
-      font-size: 1.5vw;
-  
+    .desktop-proj-tab-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding-bottom: 30px;
+      width: 83%;
+      justify-self: center;
     }
 
+      .tab,
+      .active-tab {
+        border-bottom: 1px solid white;
+        font-size: 1rem;
+        padding: 10px;
+      }
 
+      .active-tab {
+        border-bottom: 0;
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+      }
 
+      .tab:hover {
+        border: 1px solid white;
+      
+      }
 
-  .desktop-proj-tab-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding-bottom: 30px;
-    width: 83%;
-    justify-self: center;
-  }
+      .desktop-proj-img-row {
+        display: flex;
+        justify-content: center;
+        gap: 10%;
+        max-height: 70vh;
+      }
 
-    .tab,
-    .active-tab {
-      border-bottom: 1px solid white;
-      font-size: 1rem;
-      padding: 10px;
-    }
+      .ipad-img {
+        width: 60%;
+        height: auto;
+      }
 
-    .active-tab {
-      border-bottom: 0;
-      border-top: 1px solid white;
-      border-right: 1px solid white;
-      border-left: 1px solid white;
-    }
+      .iphone-img {
+        width: 23%;
+        height: auto;
+      }
 
-    .tab:hover {
-      border: 1px solid white;
-    
-    }
-
-  
-    .desktop-proj-img-row {
+    .desktop-proj-butn-row {
       display: flex;
       justify-content: center;
-      gap: 10%;
-      max-height: 70vh;
+      gap: 20%;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
     }
 
-    .ipad-img {
-      width: 60%;
-      height: auto;
+      .demo-butn,
+      .code-butn {
+        color: white;
+        outline: 2px solid white;
+        width: fit-content;
+      }
 
-    }
+      .demo-butn:hover,
+      .code-butn:hover {
+        background-color: white;
+        color: black;
+      }
 
-    .iphone-img {
-      width: 23%;
-      height: auto;
-    }
+/* Offcanvas and Card */
 
-  .desktop-proj-butn-row {
-    display: flex;
-    justify-content: center;
-    gap: 20%;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-
+.offcanvas-desktop-butn {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background-color: transparent !important;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 2px solid white;
+}
+    
+  .card {
+    background-color: rgb(86, 85, 85);
   }
 
-    .demo-butn,
-    .code-butn {
-      color: white;
-      outline: 2px solid white;
-      width: fit-content;
+    .card-about-row {
+      padding-bottom: 2vh;
     }
 
-    .demo-butn:hover,
-    .code-butn:hover {
-      background-color: white;
-      color: black;
-    }
-
-    /*  Offcanvas and Card */
-
-    .offcanvas-desktop-butn {
-      width: fit-content;
-      padding: 0;
-      border: 0;
-      background-color: transparent !important;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      border: 2px solid white;
-    }
-
-      .offcanvas-header {
-     
-      }
-
-      .offcanvas-title {
-
-      }
-    
-      .card {
-        background-color: rgb(86, 85, 85);
-      }
-      .card-about-row {
-        padding-bottom: 2vh;
-
-      }
-        .card-made-with-row{
-          padding-bottom: 2.5vh;
-          padding-top: 2vh;
-        }
-
-      .card-text {
-        /* color: black; */
-      }
-      .card-about {
-        /* color: black; */
-        /* font-weight: bold; */
-      }
-
-     
-    
+      .card-made-with-row{
+        padding-bottom: 2.5vh;
+        padding-top: 2vh;
+      }    
