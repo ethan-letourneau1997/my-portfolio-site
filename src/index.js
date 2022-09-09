@@ -1,5 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
+/* eslint-disable comma-dangle */
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -14,6 +15,7 @@ import HomepageMobile from "./mobile-components/HomepageMobile";
 import AboutMobile from "./mobile-components/About-Mobile";
 import SkillsMobile from "./mobile-components/Skills-Mobile";
 import MobileProjects from "./mobile-components/Mobile-Projects";
+import Redux from "./desktop-components/Redux";
 import "./index.css";
 import "./mobile.css";
 import "./multiple-circles.css";
@@ -29,7 +31,7 @@ class MySection extends React.Component {
   }
 }
 
-const anchors = ["Home", "About", "Skills", "Projects"];
+const anchors = ["Home", "About", "Skills", "Projects_I", "Projects_II"];
 
 function FullpageWrapper() {
   return (
@@ -39,9 +41,10 @@ function FullpageWrapper() {
       navigationTooltips={anchors}
       autoScrolling
       responsiveWidth={768}
-      showActiveTooltip
+      // showActiveTooltip
       licenseKey="KRA6H-Q2PJJ-6S9J9-ICUYH-NUBKL"
-      scrollingSpeed={1500}
+      normalScrollElements="#nasa-img-1,#nasa-img-2, .img-row, nasa-img,
+      .img-container-1, img-container-2"
       css3={false}
       onLeave={(origin, destination, direction) => {
         console.log("onLeave event", { origin, destination, direction });
@@ -54,7 +57,10 @@ function FullpageWrapper() {
             <div
               className="section fp-section homepage-section"
               style={{
-                backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center",
+                backgroundImage: `url(${background})`,
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center",
               }}
             >
               <Homepage />
@@ -62,7 +68,10 @@ function FullpageWrapper() {
             <div
               className="section fp-section"
               style={{
-                backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center",
+                backgroundImage: `url(${background})`,
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center",
               }}
             >
               <About />
@@ -70,7 +79,10 @@ function FullpageWrapper() {
             <div
               className="section fp-section"
               style={{
-                backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center",
+                backgroundImage: `url(${background})`,
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center",
               }}
             >
               <Skills />
@@ -78,10 +90,24 @@ function FullpageWrapper() {
             <div
               className="section fp-section"
               style={{
-                backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center",
+                backgroundImage: `url(${background})`,
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center",
               }}
             >
               <Projects />
+            </div>
+            <div
+              className="section fp-section"
+              style={{
+                backgroundImage: `url(${background})`,
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center",
+              }}
+            >
+              <Redux />
             </div>
           </div>
         );
@@ -103,5 +129,5 @@ root.render(
       <SkillsMobile />
       <MobileProjects />
     </div>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
