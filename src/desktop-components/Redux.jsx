@@ -53,7 +53,7 @@ export default function Redux() {
             <div id="nasa-img-1" className="img-div justify">
               <div>
                 <LazyLoadImage
-                  width="100%"
+                  width="469px"
                   effect="blur"
                   src={nasaOG} // use normal <img> attributes as props
                 />
@@ -65,8 +65,8 @@ export default function Redux() {
           <div className="img-container-2 justify">
             <div id="nasa-img-2" className="img-div justify">
               <LazyLoadImage
-                width="100%"
-                effect="blur"
+                width="469px"
+                effect="803px"
                 src={nasaRedux} // use normal <img> attributes as props
               />
             </div>
