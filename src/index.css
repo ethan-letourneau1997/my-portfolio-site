@@ -281,23 +281,31 @@
 
 /* Nasa Redux */
 
-.redux-container {
-  /* height: 99vh; */
+.redux-container h2 {
+  padding-bottom: 1%;
+}
+.redux-container p {
+  padding-bottom: 10px;
+  padding-top: 20px;
 }
 
-.img-row {
+.redux-container h5 {
+  font-size: 1.5rem;
+  padding-top: 20px;
 }
 
 .img-container-1,
 .img-container-2 {
-  background: url("./project-img/desktop-calc.png");
+  background: url("./img/blankIpad.png");
   background-size: contain;
   background-position: center;
+  background-position-x: 8px;
+  background-position-y: 16px;
   display: flex;
   align-items: center;
 
-  height: 385px;
-  width: 506px;
+  height: 440px;
+  width: 595px;
 }
 
 .img-div {
@@ -307,7 +315,7 @@
 
   align-items: flex-start;
   border-radius: 7px;
-  height: 355px;
+  height: 356px;
   cursor: grab;
 }
 

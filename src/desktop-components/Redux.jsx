@@ -38,9 +38,7 @@ export default function Redux() {
         </div>
       </Row>
       <Row className="justify">
-        <span className="tip justify">
-          You can view both sites by scrolling within a screen
-        </span>
+        <span className="tip justify">TIP: Try scrolling in each device</span>
       </Row>
       <Row>
         <Col>
@@ -76,7 +74,7 @@ export default function Redux() {
           </div>
         </Col>
       </Row>
-      <Row className="projects-2-butn-row">
+      {/* <Row className="projects-2-butn-row">
         <Col className="justify">
           <a
             href="https://resume-project-two.vercel.app/"
@@ -97,7 +95,7 @@ export default function Redux() {
             Code
           </a>
         </Col>
-      </Row>
+      </Row> */}
     </Container>
   );
 }
