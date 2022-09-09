@@ -32,8 +32,7 @@ export default function Redux() {
         <div className="justify">
           <p>
             A reimagining of the NASA website. An increased emphasis is put on
-            the images. The amount of information being thrown at the user is
-            reduced.
+            the images. The amount of information is condensed.
           </p>
         </div>
       </Row>
