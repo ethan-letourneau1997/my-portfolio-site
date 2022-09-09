@@ -5,6 +5,8 @@ import React from "react";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { responsive, placeholder, AdvancedImage } from "@cloudinary/react";
 import { scale } from "@cloudinary/url-gen/actions/resize";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import nasaRedux from "../img/nasaRedux.jpg";
 import nasaOG from "../img/nasaOG.jpg";
 
@@ -52,14 +54,24 @@ export default function Redux() {
         <Col className="justify">
           <div className="img-container-1 justify">
             <div id="nasa-img-1" className="img-div justify">
-              <img src={nasaOG} alt="" />
+              <div>
+                <LazyLoadImage
+                  src={nasaOG} // use normal <img> attributes as props
+                  width="100%"
+                  effect="blur"
+                />
+              </div>
             </div>
           </div>
         </Col>
         <Col className="justify">
           <div className="img-container-2 justify">
             <div id="nasa-img-2" className="img-div justify">
-              <img src={nasaRedux} alt="" />
+              <LazyLoadImage
+                src={nasaRedux} // use normal <img> attributes as props
+                width="100%"
+                effect="blur"
+              />
             </div>
           </div>
         </Col>
