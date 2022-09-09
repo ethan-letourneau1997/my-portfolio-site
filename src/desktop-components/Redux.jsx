@@ -1,10 +1,26 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable comma-dangle */
 import { Container, Row, Col } from "react-bootstrap";
 import React from "react";
-import nasaRedux from "../img/nasaRedux.png";
-import nasaOG from "../img/nasaOG.png";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { responsive, placeholder, AdvancedImage } from "@cloudinary/react";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+import nasaRedux from "../img/nasaRedux.jpg";
+import nasaOG from "../img/nasaOG.jpg";
 
 export default function Redux() {
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "eletourneau",
+    },
+  });
+
+  const nasaOld = cld.image("nasaOG_lngjrb");
+  const nasaNew = cld.image("nasaRedux_qc8qpd");
+
+  nasaOld.format("auto").quality("auto");
+  nasaNew.format("auto").quality("auto");
+
   return (
     <Container className="redux-container">
       <Row>
@@ -36,14 +52,14 @@ export default function Redux() {
         <Col className="justify">
           <div className="img-container-1 justify">
             <div id="nasa-img-1" className="img-div justify">
-              <img className="nasa-img" alt="" src={nasaOG} />
+              <img src={nasaOG} alt="" />
             </div>
           </div>
         </Col>
         <Col className="justify">
           <div className="img-container-2 justify">
             <div id="nasa-img-2" className="img-div justify">
-              <img className="nasa-img" alt="" src={nasaRedux} />
+              <img src={nasaRedux} alt="" />
             </div>
           </div>
         </Col>

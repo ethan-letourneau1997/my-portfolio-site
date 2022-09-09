@@ -327,3 +327,37 @@
 .projects-2-butn-row {
   padding-top: 30px;
 }
+
+/* WIREFRAME */
+
+.device-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #565757;
+  border-radius: 20px;
+  width: 40vw;
+  height: 50vh;
+  padding: 10px;
+  background-color: #101010;
+}
+
+.device {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  border-radius: 20px;
+  overflow: scroll;
+  background-color: #101010;
+}
+
+.image-div {
+  border-radius: 20px;
+  /* background-color: black; */
+}
+
+.image-div img {
+  border-radius: 20px;
+  width: 100%;
+}

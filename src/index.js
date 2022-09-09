@@ -16,6 +16,7 @@ import AboutMobile from "./mobile-components/About-Mobile";
 import SkillsMobile from "./mobile-components/Skills-Mobile";
 import MobileProjects from "./mobile-components/Mobile-Projects";
 import Redux from "./desktop-components/Redux";
+// import Wireframe from "./desktop-components/Wireframe";
 import "./index.css";
 import "./mobile.css";
 import "./multiple-circles.css";
@@ -43,7 +44,7 @@ function FullpageWrapper() {
       responsiveWidth={768}
       // showActiveTooltip
       licenseKey="KRA6H-Q2PJJ-6S9J9-ICUYH-NUBKL"
-      normalScrollElements="#nasa-img-1,#nasa-img-2, .img-row, nasa-img,
+      normalScrollElements="#nasa-img-1,#nasa-img-2, .img-row, nasa-img, .image-div, .device
       .img-container-1, img-container-2"
       css3={false}
       onLeave={(origin, destination, direction) => {
