@@ -1,5 +1,35 @@
 /* GENERAL STYLES */
 
+* {
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+.fp-section {
+  height: 100vh !important;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.container {
+  height: 100vh;
+}
+
+.go-to-butn {
+  width: fit-content !important;
+  color: white !important;
+  border: 2px solid white !important;
+}
+
+.go-to-butn:hover {
+  color: black !important;
+  background-color: white;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -26,35 +56,13 @@
   font-size: 1.2rem;
 }
 
-/* Full Document */
+/* HOMEPAGE */
 
-* {
-  color: white;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 400;
+.desktop-home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-
-.fp-section {
-  height: 100vh !important;
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-
-.go-to-butn {
-  width: fit-content !important;
-  color: white !important;
-  border: 2px solid white !important;
-}
-
-.go-to-butn:hover {
-  color: black !important;
-  background-color: white;
-}
-
-/* DESKTOP HOMEPAGE */
 
 .desktop-home-container h1 {
   font-size: 3.5vw;
@@ -68,7 +76,6 @@
 /* DESKTOP ABOUT ME */
 
 .about-me-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -80,14 +87,40 @@
   padding-top: 2vh;
 }
 
+.socials-row {
+  gap: 30px;
+}
+
+.socials {
+  width: fit-content;
+  border: 0;
+  padding: 0;
+  font-size: 3rem;
+}
+
+.fa-linkedin:hover {
+  color: #1e90ff;
+}
+
+.fa-square-github:hover {
+  color: #6cc644;
+}
+
+.fa-envelope:hover {
+  color: #fbbc05;
+}
+
 /* DESKTOP SKILLS */
 
 .skills-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
   padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.skills-container h2 {
   padding-bottom: 5vh;
 }
 
@@ -125,7 +158,7 @@
   justify-self: center;
 }
 
-/* DESKTOP PROJECTS */
+/* Projects I */
 
 .desktop-projects-container {
   display: flex;
@@ -176,6 +209,7 @@
   justify-content: center;
   gap: 10%;
   max-height: 70vh;
+  padding-bottom: 4vh;
 }
 
 .ipad-img {
@@ -186,32 +220,6 @@
 .iphone-img {
   width: 23%;
   height: auto;
-}
-
-.desktop-proj-butn-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  gap: 20%;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
-}
-
-.demo-butn,
-.code-butn {
-  color: white;
-  outline: 2px solid white;
-  width: fit-content;
-}
-
-.demo-butn:hover,
-.code-butn:hover {
-  background-color: white;
-  color: black;
-}
-
-.demo-butn {
-  grid-column: 2 / 3;
 }
 
 /* Offcanvas and Card */
@@ -240,13 +248,92 @@
   padding-top: 2vh;
 }
 
+/* Projects II */
+
+.redux-container {
+  padding-top: 3%;
+}
+
+.redux-container h2 {
+  padding-bottom: 1%;
+}
+.redux-container p {
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+.redux-container h5 {
+  font-size: 1.5rem;
+  padding-top: 10px;
+}
+
+.img-container-1,
+.img-container-2 {
+  background: url("./img/blankIpad.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  height: 400px;
+  width: 550px !important;
+  padding-left: 5px;
+  padding-bottom: 4px;
+}
+
+.img-container-1 {
+  /* justify-content: flex-end; */
+}
+
+.img-div {
+  display: flex;
+  overflow: scroll;
+  overscroll-behavior: contain;
+
+  align-items: flex-start;
+  border-radius: 7px;
+  height: 335px;
+  cursor: grab;
+}
+
+.img-div img {
+  border-radius: 20px;
+  width: 448px;
+}
+
+.tip-row {
+  display: flex !important;
+  justify-content: center;
+}
+
+.tip {
+  font-weight: bold;
+  border-bottom: 1px solid white;
+  width: fit-content;
+}
+
+.projects-2-butn-row {
+  padding-top: 10px;
+}
+
+.w-100 {
+  display: flex !important;
+  justify-content: center;
+}
+
 /* Attribution Popover */
 
 .attribution-row {
-  align-self: flex-start;
-  justify-self: flex-start;
+  align-self: flex-end;
+  justify-self: flex-end;
   width: 100vw;
   height: 40vh;
+}
+
+.overlay-row {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .popover-header {
@@ -277,95 +364,4 @@
   height: fit-content;
   margin-top: 10px;
   align-self: flex-end;
-}
-
-/* Nasa Redux */
-
-.redux-container h2 {
-  padding-bottom: 1%;
-}
-.redux-container p {
-  padding-bottom: 10px;
-  padding-top: 20px;
-}
-
-.redux-container h5 {
-  font-size: 1.5rem;
-  padding-top: 20px;
-}
-
-.img-container-1,
-.img-container-2 {
-  background: url("./img/blankIpad.png");
-  background-size: contain;
-  background-position: center;
-  background-position-x: 8px;
-  background-position-y: 16px;
-  display: flex;
-  align-items: center;
-
-  height: 440px;
-  width: 595px;
-}
-
-.img-div {
-  display: flex;
-  overflow: scroll;
-  overscroll-behavior: contain;
-
-  align-items: flex-start;
-  border-radius: 7px;
-  height: 356px;
-  cursor: grab;
-}
-
-.img-div img {
-  width: 469px;
-}
-
-#nasa-img-1 img {
-}
-
-.tip {
-  font-weight: bold;
-  border-bottom: 1px solid white;
-  width: fit-content;
-}
-
-.projects-2-butn-row {
-  padding-top: 30px;
-}
-
-/* WIREFRAME */
-
-.device-outer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #565757;
-  border-radius: 20px;
-  width: 40vw;
-  height: 50vh;
-  padding: 10px;
-  background-color: #101010;
-}
-
-.device {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-  border-radius: 20px;
-  overflow: scroll;
-  background-color: #101010;
-}
-
-.image-div {
-  border-radius: 20px;
-  /* background-color: black; */
-}
-
-.image-div img {
-  border-radius: 20px;
-  width: 100%;
 }

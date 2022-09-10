@@ -1,0 +1,20 @@
+.project-button-row {
+  display: grid;
+  grid-template-columns: 5fr 1fr 5fr;
+}
+
+.project-button,
+.angle-button {
+  height: fit-content;
+  width: fit-content;
+  justify-self: center;
+}
+
+.angle-button {
+  border: 0;
+  align-self: flex-end;
+}
+
+.angle-button:hover {
+  background-color: transparent;
+}
