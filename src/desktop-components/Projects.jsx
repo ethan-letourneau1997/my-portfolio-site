@@ -13,6 +13,8 @@ import React, {
   Form,
   ButtonGroup,
   ToggleButton,
+  Modal,
+  Button,
 } from "react-bootstrap";
 
 import { useState } from "react";
@@ -20,8 +22,12 @@ import { Cloudinary } from "@cloudinary/url-gen";
 import { responsive, placeholder, AdvancedImage } from "@cloudinary/react";
 import ProjectButnRow from "./project-button-row/ProjectButnRow";
 import mongoIcon from "../icons/icons8-mongodb-a-cross-platform-document-oriented-database-program-80.png";
+import inventManageDesk from "../project-img/desktop-inventory-management.png";
+import inventManageMobile from "../project-img/iphone-inventory-management.png";
 
 export default function Projects() {
+  const [showModal, setShowModal] = useState(false);
+
   const [radioValue, setDesktopRadioValue] = useState("1");
 
   const desktopRadios = [
@@ -195,12 +201,43 @@ export default function Projects() {
                   placeholder({ mode: "predominant" }),
                 ]}
               />
+              <Button
+                variant="outline-light fullscreen-butn"
+                onClick={() => setShowModal(true)}
+              >
+                <i className="fa-solid fa-magnifying-glass" />
+              </Button>
             </div>
             <ProjectButnRow
               hrefDemo="https://great-outdoors-inv-management.herokuapp.com/catalog/items"
               hrefCode="https://github.com/ethan-letourneau1997/Great-Outdoors-Inventory-Management"
             />
           </div>
+          <Modal
+            show={showModal}
+            onHide={() => setShowModal(false)}
+            dialogClassName="modal-90w"
+            aria-labelledby="example-custom-modal-styling-title"
+            backdrop="static"
+            fullscreen
+          >
+            <Modal.Header
+              className="modal-header"
+              closeButton
+              closeVariant="white"
+            />
+
+            <Modal.Body>
+              <Row className="desktop-proj-img-row-modal">
+                <Col>
+                  <img src={inventManageDesk} alt=""></img>
+                </Col>
+                <Col>
+                  <img src={inventManageMobile} alt=""></img>
+                </Col>
+              </Row>
+            </Modal.Body>
+          </Modal>
         </Row>
       ) : null}
 

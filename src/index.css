@@ -66,6 +66,7 @@
 
 .desktop-home-container h1 {
   font-size: 3.5vw;
+  font-size: 5vw;
 }
 
 .desktop-home-container h2 {
@@ -209,6 +210,7 @@
   justify-content: center;
   gap: 10%;
   max-height: 70vh;
+  min-height: 50vh;
   padding-bottom: 4vh;
 }
 
@@ -364,4 +366,183 @@
   height: fit-content;
   margin-top: 10px;
   align-self: flex-end;
+}
+
+/* Redux V2 */
+.redux-v2-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.redux-v2-container h2 {
+  padding-bottom: 20px;
+}
+
+.redux-v2-container h4 {
+  padding-bottom: 5px;
+}
+
+.device-row {
+  background-color: #131313;
+  width: fit-content;
+  padding: 0;
+  margin-right: 20px;
+  margin-left: 20px;
+
+  border: 1px solid #525252;
+  border-radius: 20px;
+}
+
+.compare-slider {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.__rcs-handle-button {
+  color: black;
+}
+
+.__rcs-handle-button div {
+  color: black;
+}
+
+.project-2-btn-row {
+  padding-top: 20px;
+}
+
+/* Projects III */
+
+.social-network-desktop {
+  width: auto;
+}
+.social-network-desktop {
+  height: 70vh;
+  width: auto;
+}
+
+.device {
+  background-color: #131313;
+  width: fit-content;
+  padding: 20px;
+
+  border: 1px solid #525252;
+  border-radius: 20px;
+}
+
+.projects3-header-col {
+  gap: 20px;
+  /* padding-left: 155px; */
+  padding-bottom: 30px;
+}
+
+.social-network-mobile-row img {
+  height: 70vh;
+  width: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.mobile-device {
+  background-color: #131313;
+  width: fit-content;
+  padding: 10px;
+
+  border: 1px solid #525252;
+  border-radius: 20px;
+}
+
+.mob-col-1 {
+  display: flex;
+  justify-content: flex-end;
+  height: 70vh;
+}
+
+.mob-col-2 {
+  display: flex;
+  justify-content: center;
+  height: 70vh;
+}
+
+.mob-col-3 {
+  display: flex !important;
+  justify-content: flex-start;
+  height: 70vh;
+  gap: 20px;
+}
+
+.project-3-btn-row {
+  justify-content: center;
+  padding-top: 30px;
+  gap: 10vw;
+}
+/* Project Modals */
+
+.img-button-row {
+  justify-content: center;
+  display: flex !important;
+}
+
+.fullscreen-butn {
+  width: fit-content;
+  height: fit-content;
+  border: 3px solid white;
+}
+
+.fullscreen-butn i {
+  font-size: 1.3rem;
+}
+
+.fullscreen-butn:hover i {
+  color: black !important;
+}
+
+.fullscreen-butn:focus {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.modal-header {
+  height: 5vh;
+  background-color: black;
+  border: 0;
+}
+
+.modal-body {
+  overflow: hidden !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.social-network-desktop-modal {
+  height: 95vh;
+  width: auto;
+}
+
+.mobile-modal-body {
+  gap: 3vw;
+}
+
+.mobile-device-modal {
+  padding: 10px;
+  border: 1px solid #525252;
+  border-radius: 10px;
+}
+
+.social-network-mobile-modal {
+  height: 90vh;
+  width: auto;
+}
+
+.compare-slider-modal {
+  height: 85vh !important;
+  width: auto;
+}
+
+.desktop-proj-img-row-modal img {
+  height: 90vh;
+  width: auto;
 }
